@@ -1,9 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= resources.translate("Hu.js coming soon!")%></title>
+  <title><%= resources.translate("Hu.js coming soon!")%></title>
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
-  <%= resources.translate("Hu.js coming soon!")%>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#"><%= resources.translate("Hujs")%></a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#"><%= resources.translate("Homepage")%></a></li>
+            <li><a href="#schedule"><%= resources.translate("Schedule")%></a></li>
+            <li><a href="#venue"><%= resources.translate("Venue")%></a></li>
+            <li><a href="#speakers"><%= resources.translate("Speakers")%></a></li>
+            <li><a href="#sponsors"><%= resources.translate("Sponsors")%></a></li>
+            <li><a href="#community"><%= resources.translate("Community")%></a></li>
+            <li><a href="#about"><%= resources.translate("About")%></a></li>
+            <li><a href="#contact"><%= resources.translate("Contact")%></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-unit">
+      <h1><%= resources.translate("Hu.js coming soon!")%></h1>
+    </div>
+  </div>
+<script type='text/javascript'>
+(function() {
+    var c = document.createElement('script'); 
+    c.type = 'text/javascript';
+    c.async = true;
+    c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/46449';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
 </body>
 </html>
