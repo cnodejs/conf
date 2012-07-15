@@ -1,0 +1,24 @@
+{
+  "name": "conf",
+  "version": "0.0.1",
+  "description": "Hu.js conf.",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cnodejs/conf.git"
+  },
+  "keywords": [
+    "Hu.js",
+    "Node.js",
+    "JavaScript",
+    "CNode"
+  ],
+  "dependencies": {
+    "connect": "2.3.8"
+  },
+  "author": "JacksonTian",
+  "license": "MIT"
+}
