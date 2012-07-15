@@ -9,12 +9,12 @@ app.use("/assets", express.static(__dirname + "/assets"));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(i18n());
-// app.use();
 app.use(function (req, res, next) {
   resources.setLocale(req.locales[0]);
+  req.resources = resources;
   next();
 });
 app.get('/', function (req, res) {
-  res.render('index', {resources: resources});
+  res.render('index', {resources: req.resources});
 });
 app.listen(80);
