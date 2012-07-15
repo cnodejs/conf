@@ -6,7 +6,7 @@ module.exports = new Localize({
   },
   "Hu.js coming soon!": {
     "en-us": "Hu.js coming soon!",
-    "zh-cn": "沪js即将到来！"
+    "zh-cn": "沪js即将到来！九月开启！敬请期待！"
   },
   "Homepage": {
     "en-us": "Home",
