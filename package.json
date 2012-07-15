@@ -17,7 +17,9 @@
     "CNode"
   ],
   "dependencies": {
-    "connect": "2.3.8"
+    "connect": "2.3.8",
+    "express": "3.0.0beta6",
+    "localize": "0.4.4"
   },
   "author": "JacksonTian",
   "license": "MIT"

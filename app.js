@@ -1,11 +1,20 @@
-var path = require('path');
+var express = require('express');
+var i18n = require('connect-i18n');
+var ejs = require('ejs');
 
-var connect = require('connect');
+var resources = require('./resources');
 
-var app = connect();
-app.use("/assets", connect.static(path.join(__dirname, "assets")));
+var app = express.createServer();
+app.use("/assets", express.static(__dirname + "/assets"));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.use(i18n());
+// app.use();
 app.use(function (req, res, next) {
-  res.writeHead(200);
-  res.end("Hu.js coming soon!");
+  resources.setLocale(req.locales[0]);
+  next();
 });
-app.listen(8080);
+app.get('/', function (req, res) {
+  res.render('index', {resources: resources});
+});
+app.listen(80);
