@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
+  "main": "./app.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/cnodejs/conf.git"
