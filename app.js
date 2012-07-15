@@ -14,6 +14,10 @@ app.use(function (req, res, next) {
   req.resources = resources;
   next();
 });
+// 用于网络监控
+app.get('/status', function (req, res, next) {
+  res.json({status: 'success', now: new Date()});
+});
 app.get('/', function (req, res) {
   res.render('index', {resources: req.resources});
 });
