@@ -10,6 +10,9 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(i18n());
 app.use(function (req, res, next) {
+  if (['en-us', 'zh-cn'].indexOf(req.locales[0]) === -1) {
+    req.locales[0] = 'en-us';
+  }
   resources.setLocale(req.locales[0]);
   req.resources = resources;
   next();
