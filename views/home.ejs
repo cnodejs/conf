@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%= resources.translate("Hujs")%></title>
+  <link rel="stylesheet" href="/assets/styles/site.css" />
+</head>
+<body>
+  <div class="content">
+    <div class="header">
+      <div class="logo">
+        <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
+      </div>
+    </div>
+    <div class="main">
+      <div class="page">
+        <h1><%= resources.translate("date_city")%></h1>
+        <p><%= resources.translate("introduction")%></p>
+        <h2><%- resources.translate("hashtag")%></h2>
+      </div>
+    </div>
+  </div>
+<script type='text/javascript'>
+(function() {
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/46449';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+</body>
+</html>

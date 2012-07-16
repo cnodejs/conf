@@ -1,8 +1,7 @@
 var express = require('express');
 var i18n = require('connect-i18n');
 var ejs = require('ejs');
-
-var resources = require('./resources');
+var Localize = require('localize');
 
 var app = express.createServer();
 app.use("/assets", express.static(__dirname + "/assets"));
@@ -13,8 +12,11 @@ app.use(function (req, res, next) {
   if (['en-us', 'zh-cn'].indexOf(req.locales[0]) === -1) {
     req.locales[0] = 'en-us';
   }
-  resources.setLocale(req.locales[0]);
-  req.resources = resources;
+  req.getResources = function (viewname) {
+    var localize = new Localize(require('./resources')[viewname]);
+    localize.setLocale(this.locales[0]);
+    return localize;
+  };
   next();
 });
 // 用于网络监控
@@ -22,6 +24,6 @@ app.get('/status', function (req, res, next) {
   res.json({status: 'success', now: new Date()});
 });
 app.get('/', function (req, res) {
-  res.render('index', {resources: req.resources});
+  res.render('home', {resources: req.getResources('home')});
 });
 app.listen(80);

@@ -1,5 +1,23 @@
-var Localize = require('localize');
-module.exports = new Localize({
+exports.home = {
+  "Hujs": {
+    "en-us": "HuJS 2012, September 14-16, Shanghai",
+    "zh-cn": "沪JS 2012，九月14-16日，上海"
+  },
+  "date_city": {
+    "en-us": "September 14-16, Shanghai",
+    "zh-cn": "九月14－16日，上海"
+  },
+  "introduction": {
+    "en-us": "Conference and hackathon for the Chinese Javascript & Node.js developer community",
+    "zh-cn": "一个为中国Javascript和Node.js研发者社区举办的会议"
+  },
+  "hashtag": {
+    "en-us": 'Twitter： <a href="http://search.twitter.com/search?q=%23hujs">#hujs#</a>',
+    "zh-cn": '微博： <a href="http://s.weibo.com/weibo/%25E6%25B2%25AAJS&Refer=q_weibo">#沪JS#</a>'
+  }
+};
+
+exports.index = {
   "Hujs": {
     "en-us": "Hu.js",
     "zh-cn": "沪js"
@@ -40,4 +58,4 @@ module.exports = new Localize({
     "en-us": "Contact",
     "zh-cn": "联系方式"
   }
-});
+};
