@@ -2,6 +2,11 @@
 <html>
 <head>
   <title><%= resources.translate("Hu.js coming soon!")%></title>
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script>
+    var csrf = '<%=csrf%>';
+  </script>
+  <script src="/assets/scripts/index.js"></script>
   <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/assets/styles/index.css">
 </head>
@@ -14,10 +19,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#"><%= resources.translate("Hujs")%></a>
+        <a class="brand" href="/">
+          <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
+        </a>
         <div class="nav-collapse">
           <ul class="nav">
             <li class="active"><a href="#"><%= resources.translate("Homepage")%></a></li>
+            <li class="divider-vertical"></li>
             <li><a href="#schedule"><%= resources.translate("Schedule")%></a></li>
             <li><a href="#venue"><%= resources.translate("Venue")%></a></li>
             <li><a href="#speakers"><%= resources.translate("Speakers")%></a></li>
@@ -27,12 +35,83 @@
             <li><a href="#contact"><%= resources.translate("Contact")%></a></li>
           </ul>
         </div><!--/.nav-collapse -->
+        <div class="btn-group pull-right">
+        <% if (user.name) {%>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-user"></i> <%=user.name%>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Sign Out</a></li>
+          </ul>
+        <% } else { %>
+          <a href="/oauth?blogtype=weibo">
+            <img src="http://www.sinaimg.cn/blog/developer/wiki/240.png" />
+          </a>
+        <% }%>
+        </div>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="hero-unit">
-      <h1><%= resources.translate("Hu.js coming soon!")%></h1>
+      <div class="logo">
+        <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
+      </div>
+      <h1><%= resources.translate("date_city")%></h1>
+      <p><%= resources.translate("introduction")%></p>
+      <h2><%- resources.translate("hashtag")%></h2>
+    </div>
+    <p class="lead"><%= resources.translate("Hu.js coming soon!")%></p>
+    <h2>调查问卷</h2>
+    <h3>正式话题（已确定的话题）</h3>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>话题</th><th>演讲嘉宾</th><th>我感兴趣+1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% formal.forEach(function (topic) { %>
+        <tr data-id="<%=topic._id%>">
+          <td><%=topic.name%></td>
+          <td><%=topic.speaker%></td>
+          <td><a href="javascript:;" class="btn btn-primary">我想听 +1 | <%= topic.vote.length %></a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <h3>预选话题（拟邀请或邀请中的话题）</h3>
+    <table id="pre-session" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>话题</th><th>演讲嘉宾</th><th>我感兴趣+1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% wish.forEach(function (topic) { %>
+        <tr data-id="<%=topic._id%>">
+          <td><%=topic.name%></td>
+          <td><%=topic.speaker%></td>
+          <td><a href="javascript:;" class="btn btn-primary">我想听 +1 | <%= topic.vote.length %></a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <h3>我还想听</h3>
+    <p>上面的话题都不感兴趣，还不够给力？遗漏了您喜欢的大牛没有邀请？您还有更好的推荐或是自荐，无论国内还是国外的嘉宾？速填表单，组委会会为您尽力邀请。</p>
+    <div class="well form-inline">
+      <fieldset id="topic" class="control-group">
+        <input type="hidden" id="id" />
+        <label for="name">话题：</label>
+        <input type="text" id="name" placeholder="比如：JavaScript异步编程" />
+        <label for="speaker">讲师：</label>
+        <input type="text" class="input-medium" id="speaker" placeholder="比如：Ryan Dahl" />
+        <button class='btn btn-primary' id='submit'>我还想听</button>
+        <span class="help-inline" id='status'>&nbsp;</span>
+      </fieldset>
     </div>
     <hr />
     <footer>

@@ -24,7 +24,7 @@ exports.index = {
   },
   "Hu.js coming soon!": {
     "en-us": "Hu.js coming soon!",
-    "zh-cn": "沪js即将到来！九月开启！敬请期待！"
+    "zh-cn": "沪JS正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾"
   },
   "Homepage": {
     "en-us": "Home",
@@ -57,5 +57,17 @@ exports.index = {
   "Contact": {
     "en-us": "Contact",
     "zh-cn": "联系方式"
+  },
+  "date_city": {
+    "en-us": "September 14-16, Shanghai",
+    "zh-cn": "九月14－16日，上海"
+  },
+  "introduction": {
+    "en-us": "Conference and hackathon for the Chinese Javascript & Node.js developer community",
+    "zh-cn": "一个为中国Javascript和Node.js研发者社区举办的会议"
+  },
+  "hashtag": {
+    "en-us": 'Twitter： <a href="http://search.twitter.com/search?q=%23hujs">#hujs#</a>',
+    "zh-cn": '微博： <a href="http://s.weibo.com/weibo/%25E6%25B2%25AAJS&Refer=q_weibo">#沪JS#</a>'
   }
 };

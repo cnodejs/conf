@@ -1,4 +1,43 @@
+@font-face {
+  font-family: 'License Plate';
+  src: url(../LicensePlate.ttf);
+}
 body {
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	padding-top: 60px;
 	padding-bottom: 40px;
+}
+.brand {
+  font-family: 'License Plate';
+}
+.hero-unit {
+  text-align: center;
+}
+div.logo {
+  margin: 10px auto;
+  border: 5px solid white;
+  background: blue;
+  color: white;
+  padding: 0;
+  width: 4.5em;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: 'License Plate';
+  font-size: 5em;
+  line-height: normal;
+  /* box-shadow */
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+  box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+}
+
+span.logo_dot {
+  font-family: Times;
+  vertical-align: middle;
+  font-size: .4em
+}
+span.logo_hanzi {
+  font-family: "Hei", "SimHei", "Microsoft YaHei";
 }
