@@ -25,6 +25,9 @@
     "connect-i18n": "0.2.0"
   },
   "author": "JacksonTian",
+  "contributors": [
+    "Goddy Zhao <goddy128@gmail.com> (http://goddyzhao.me)"
+  ],
   "license": "MIT",
   "customHost": "conf.cnodejs.net"
 }
