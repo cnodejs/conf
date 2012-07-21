@@ -47,19 +47,6 @@ var authRequired = function (req, res, next) {
   next();
 };
 
-var adminRequired = function (req, res, next) {
-  var user = req.session.oauthUser;
-  if (!user) {
-    if (req.is('application/json')) {
-      res.send({'status': 'fail', 'message': 'unauthorized'}, 401);
-    } else {
-      res.redirect('/401');
-    }
-    return;
-  }
-  next();
-};
-
 app.post('/add_topic', authRequired, survey.addTopic);
 app.post('/vote_topic', authRequired, survey.vote);
 // 用于网络监控

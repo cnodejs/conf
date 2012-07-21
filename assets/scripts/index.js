@@ -82,3 +82,7 @@ $(function () {
     });
   });
 });
+
+$(function () {
+  $('.dropdown-toggle').dropdown();
+});
