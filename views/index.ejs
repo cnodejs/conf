@@ -65,12 +65,12 @@
       <h2><%- resources.translate("hashtag")%></h2>
     </div>
     <p class="lead"><%= resources.translate("Hu.js coming soon!")%></p>
-    <h2>调查问卷</h2>
-    <h3>正式话题（已确定的话题）</h3>
+    <h2><%= resources.translate("the survey")%></h2>
+    <h3><%= resources.translate("Topics(formal)")%></h3>
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th>话题</th><th>演讲嘉宾</th><th>我感兴趣+1</th>
+          <th><%= resources.translate("Topic")%></th><th>演讲嘉宾</th><th>我感兴趣+1</th>
         </tr>
       </thead>
       <tbody>
@@ -83,11 +83,11 @@
         <% }); %>
       </tbody>
     </table>
-    <h3>预选话题（拟邀请或邀请中的话题）</h3>
+    <h3><%= resources.translate("Topics(inviting)")%></h3>
     <table id="pre-session" class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th>话题</th><th>演讲嘉宾</th><th>我感兴趣+1</th>
+          <th><%= resources.translate("Topic")%></th><th>演讲嘉宾</th><th>我感兴趣+1</th>
         </tr>
       </thead>
       <tbody>

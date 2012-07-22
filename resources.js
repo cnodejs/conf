@@ -23,7 +23,7 @@ exports.index = {
     "zh-cn": "沪js"
   },
   "Hu.js coming soon!": {
-    "en-us": "Hu.js coming soon!",
+    "en-us": "Hu.js is inviting the JavaScritp experts which come from China &amp; International. Welcome to participate in our survey!",
     "zh-cn": "沪JS正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾"
   },
   "Homepage": {
@@ -69,5 +69,21 @@ exports.index = {
   "hashtag": {
     "en-us": 'Twitter： <a href="http://search.twitter.com/search?q=%23hujs">#hujs#</a>',
     "zh-cn": '微博： <a href="http://s.weibo.com/weibo/%25E6%25B2%25AAJS&Refer=q_weibo">#沪JS#</a>'
+  },
+  "The survey": {
+    "en-us": 'Survey',
+    "zh-cn": '调查问卷'
+  },
+  "Topics(formal)": {
+    "en-us": 'Topics(formal)',
+    "zh-cn": '正式话题（已确定的话题）'
+  },
+  "Topics(inviting)": {
+    "en-us": 'Topics(inviting)',
+    "zh-cn": '预选话题（拟邀请或邀请中的话题）'
+  },
+  "Topic": {
+    "en-us": "Topic",
+    "zh-cn": "话题"
   }
 };
