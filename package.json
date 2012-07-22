@@ -22,12 +22,13 @@
     "express": "3.0.0beta6",
     "localize": "0.4.4",
     "ejs": "0.7.2",
-    "connect-i18n": "0.2.0"
+    "connect-i18n": "0.2.0",
+    "weibo": "0.5.0"
   },
   "author": "JacksonTian",
   "contributors": [
     "Goddy Zhao <goddy128@gmail.com> (http://goddyzhao.me)"
   ],
   "license": "MIT",
-  "customHost": "hujs.org"
+  "customHost": "conf.cnodejs.org"
 }

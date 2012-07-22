@@ -6,7 +6,7 @@
   <script>
     var csrf = '<%=csrf%>';
   </script>
-  <script src="/assets/scripts/index.js"></script>
+  <script src="/assets/scripts/admin.js"></script>
   <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/assets/styles/index.css">
 </head>
@@ -50,43 +50,32 @@
           <a href="/oauth?blogtype=weibo">
             <img src="http://www.sinaimg.cn/blog/developer/wiki/240.png" />
           </a>
-          <a href="/oauth?blogtype=tqq">
-            腾讯微博
-          </a>
-          <a href="/oauth?blogtype=github">
-            Github
-          </a>
         <% }%>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="hero-unit">
-      <div class="logo">
-        <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
-      </div>
-      <h1><%= resources.translate("date_city")%></h1>
-      <p><%= resources.translate("introduction")%></p>
-      <h2><%- resources.translate("hashtag")%></h2>
-    </div>
-    <p class="lead"><%= resources.translate("Hu.js coming soon!")%></p>
     <h2><%= resources.translate("The survey")%></h2>
     <h3><%= resources.translate("Topics(formal)")%></h3>
-    <table class="table table-bordered table-striped">
+    <table id="formal-session" class="table table-bordered table-striped">
       <thead>
         <tr>
           <th><%= resources.translate("Topic")%></th>
           <th><%= resources.translate("Speakers")%></th>
-          <th><%= resources.translate("Interesting") %></th>
+          <th>人气值</th>
+          <th>操作</th>
+          <th>查看</th>
         </tr>
       </thead>
       <tbody>
         <% formal.forEach(function (topic) { %>
-        <tr data-id="<%=topic._id%>">
+        <tr data-id="<%=topic._id%>" data-type="<%=topic.type%>">
           <td><%=topic.name%></td>
           <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%=resources.translate("I wanna listen it")%> | <%= topic.vote.length %></a></td>
+          <td><%= topic.vote.length %></td>
+          <td><a href="javascript:;" class="select btn btn-primary">选为预选话题</td>
+          <td><a href="javascript:;" class="view">查看</a></td>
         </tr>
         <% }); %>
       </tbody>
@@ -97,15 +86,19 @@
         <tr>
           <th><%= resources.translate("Topic")%></th>
           <th><%= resources.translate("Speakers")%></th>
-          <th><%= resources.translate("Interesting") %></th>
+          <th>人气值</th>
+          <th>操作</th>
+          <th>查看</th>
         </tr>
       </thead>
       <tbody>
         <% wish.forEach(function (topic) { %>
-        <tr data-id="<%=topic._id%>">
+        <tr data-id="<%=topic._id%>" data-type="<%=topic.type%>">
           <td><%=topic.name%></td>
           <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%=resources.translate("I wanna listen it")%> | <%= topic.vote.length %></a></td>
+          <td><%= topic.vote.length %></td>
+          <td><a href="javascript:;" class="select btn btn-primary">选为正式话题</td>
+          <td><a href="javascript:;" class="view">查看</a></td>
         </tr>
         <% }); %>
       </tbody>
@@ -119,7 +112,7 @@
         <input type="text" id="name" placeholder="<%= resources.translate("eg. topic") %>" />
         <label for="speaker"><%= resources.translate("Speakers")%>：</label>
         <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.translate("eg. speaker") %>" />
-        <button class='btn btn-primary' id='submit'><%= resources.translate("I wanna listen too!")%></button>
+        <button class='btn btn-primary' id='submit'>更新</button>
         <span class="help-inline" id='status'>&nbsp;</span>
       </fieldset>
     </div>
