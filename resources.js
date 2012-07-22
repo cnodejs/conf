@@ -108,10 +108,10 @@ exports.index = {
   },
   "eg. topic": {
     "en-us": "eg. Connect/Express",
-    "zh-ch": "比如：JSCEX"
+    "zh-cn": "比如：JSCEX"
   },
   "eg. speaker": {
     "en-us": "eg. TJ",
-    "zh-ch": "比如：老赵"
+    "zh-cn": "比如：老赵"
   }
 };
