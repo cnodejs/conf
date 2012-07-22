@@ -1,7 +1,6 @@
 var topic = require('../proxy/topic');
-
 exports.index = function (req, res, next) {
-  var user = req.session.oauthUser;
+  var user = req.session.oauthUser /* Weibo */ || req.user /* Twitter or Github */;
   topic.getTopics(function (err, row) {
     if (err) {
       // TODO

@@ -2,8 +2,9 @@ var express = require('express');
 var i18n = require('connect-i18n');
 var ejs = require('ejs');
 var Localize = require('localize');
+var everyauth = require('everyauth');
 var weibo = require('./weibo');
-
+var auth = require('./auth');
 // Controllers
 var index = require('./controllers/index');
 var survey = require('./controllers/survey');
@@ -15,6 +16,8 @@ app.use(express.session({cookie: {maxAge: 20 * 60000}}));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.csrf());
+app.use(everyauth.middleware());
+app.use(auth());
 app.use(weibo());
 
 app.use("/assets", express.static(__dirname + "/assets"));
@@ -34,7 +37,7 @@ app.use(function (req, res, next) {
 });
 
 var authRequired = function (req, res, next) {
-  var user = req.session.oauthUser;
+  var user = req.session.oauthUser /* Weibo */ || req.user /* Twitter or Github */;
   if (!user) {
     var accept = req.headers.accept || '';
     if (~accept.indexOf('json')) {

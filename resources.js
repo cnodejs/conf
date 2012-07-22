@@ -16,7 +16,6 @@ exports.home = {
     "zh-cn": '微博： <a href="http://s.weibo.com/weibo/%25E6%25B2%25AAJS&Refer=q_weibo">#沪JS#</a>'
   }
 };
-
 exports.index = {
   "Hujs": {
     "en-us": "Hu.js",
@@ -69,5 +68,13 @@ exports.index = {
   "hashtag": {
     "en-us": 'Twitter： <a href="http://search.twitter.com/search?q=%23hujs">#hujs#</a>',
     "zh-cn": '微博： <a href="http://s.weibo.com/weibo/%25E6%25B2%25AAJS&Refer=q_weibo">#沪JS#</a>'
+  },
+  "login": {
+      "en-us": '<a class="btn github" href="/auth/github">Sign in with <strong>Github</strong></a><a href="/auth/twitter" style="float:right;"><img src="http://ww1.sinaimg.cn/large/a74ecc4cjw1dv5at9klmzj.jpg" /></a>',
+      "zh-cn": '<a class="btn github" href="/auth/github">用<strong>Github</strong>登录</a><a style="float:right;" href="/oauth/login?blogtype=weibo"><img src="http://www.sinaimg.cn/blog/developer/wiki/240.png" /></a>'
+  },
+  "logout": {
+      "en-us": 'Logout',
+      "zh-cn": '退出'
   }
 };

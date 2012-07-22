@@ -3,7 +3,6 @@
  * Copyright(c) 2012 fengmk2 <fengmk2@gmail.com>
  * MIT Licensed
  */
-
 /**
  * Module dependencies.
  */
@@ -21,14 +20,12 @@ function get_referer(req, options) {
   }
   return referer;
 }
-
 function redirect(res, url) {
   res.writeHead(302, {
     'Location': url
   });
   res.end();
 }
-
 function login(req, res, next, options) {
   var blogtype_field = options.blogtype_field;
   var blogtype = req.query[blogtype_field];
@@ -53,13 +50,11 @@ function login(req, res, next, options) {
     redirect(res, auth_url);
   });
 }
-
 function logout(req, res, next, options) {
   var referer = get_referer(req, options);
   req.session.oauthUser = null;
   redirect(res, referer);
 }
-
 function callback(req, res, next, options) {
   var blogtype = req.query[options.blogtype_field];
   var oauth_info = req.session.oauth_info || {};
@@ -84,12 +79,12 @@ function callback(req, res, next, options) {
       for (var k in auth_user) {
         t_user[k] = auth_user[k];
       }
+      t_user.weibo = true;
       req.session.oauthUser = t_user;
       redirect(res, referer);
     });
   });
 }
-
 /**
  * oauth middleware for connect
  *
@@ -111,7 +106,6 @@ function callback(req, res, next, options) {
  *   - `blogtype_field`: default is 'blogtype', 
  *     if you want to connect weibo, login url should be '/oauth?blogtype=weibo'
  */
-
 module.exports = function oauth(options) {
   if (typeof arguments[0] === 'function') {
     // support old arguments style: (login_callback, options)
@@ -124,8 +118,8 @@ module.exports = function oauth(options) {
      options.home_url = options.home_url.replace(/\/+$/, ''); 
     //options.home_url = home_url.replace(/\/+$/, '');
   }
-  options.login_path = options.login_path || '/oauth';
-  options.logout_path = options.logout_path || '/ouath/logout';
+  options.login_path = options.login_path || '/oauth/login';
+  options.logout_path = options.logout_path || '/oauth/logout';
   options.callback_path = options.login_path + '_callback';
   options.blogtype_field = options.blogtype_field || 'blogtype'; // url 不区分大小写\
   return function(req, res, next) {
