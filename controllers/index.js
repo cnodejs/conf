@@ -13,12 +13,12 @@ exports.index = function (req, res, next) {
       formal: row.filter(function (topic) {
         return topic.type === "formal";
       }).sort(function (a, b) {
-        return a.vote.length - b.vote.length;
+        return b.vote.length - a.vote.length;
       }),
       wish: row.filter(function (topic) {
         return topic.type === "wish";
       }).sort(function (a, b) {
-        return a.vote.length - b.vote.length;
+        return b.vote.length - a.vote.length;
       }),
       user: user || {},
       csrf: req.session._csrf,
