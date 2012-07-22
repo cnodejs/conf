@@ -41,3 +41,12 @@ span.logo_dot {
 span.logo_hanzi {
   font-family: "Hei", "SimHei", "Microsoft YaHei";
 }
+.navbar .btn-group .btn.github {
+  margin-left: 3px;
+  border-radius: 2px;
+  float: right;
+  padding: 2px 5px 2px 25px;
+  background: url('https://github.com/favicon.ico') whiteSmoke no-repeat;
+  background-position: 1px .5px;
+  background-size: 22px;
+}

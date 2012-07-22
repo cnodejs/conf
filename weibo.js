@@ -11,7 +11,7 @@ var config = require('./config');
 
 // NAE上module版本有点问题，引用自己提交的版本
 var tapi = require('./node_modules/weibo');
-tapi.init('weibo', config.weibo.appkey, config.weibo.secret, "http://conf.cnodejs.net/callback");
+tapi.init('weibo', config.weibo.appkey, config.weibo.secret);
 
 function get_referer(req, options) {
   var referer = req.headers.referer || '/';
@@ -112,7 +112,7 @@ function callback(req, res, next, options) {
  *     if you want to connect weibo, login url should be '/oauth?blogtype=weibo'
  */
 
-module.exports = function oauth(options) {
+module.exports = function oauth (options) {
   if (typeof arguments[0] === 'function') {
     // support old arguments style: (login_callback, options)
     options = arguments[1] || {};
@@ -125,7 +125,7 @@ module.exports = function oauth(options) {
     //options.home_url = home_url.replace(/\/+$/, '');
   }
   options.login_path = options.login_path || '/oauth';
-  options.logout_path = options.logout_path || '/ouath/logout';
+  options.logout_path = options.logout_path || '/oauth/logout';
   options.callback_path = options.login_path + '_callback';
   options.blogtype_field = options.blogtype_field || 'blogtype'; // url 不区分大小写\
   return function(req, res, next) {
