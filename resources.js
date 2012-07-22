@@ -95,7 +95,7 @@ exports.index = {
     "zh-cn": "我还想听"
   },
   "I wanna listen it": {
-    "en-us": "I wanna listen it +1",
+    "en-us": "like +1",
     "zh-cn": "我想听+1"
   },
   "Not enough": {
@@ -103,7 +103,7 @@ exports.index = {
     "zh-cn": "上面的话题都不感兴趣，还不够给力？遗漏了您喜欢的大牛没有邀请？您还有更好的推荐或是自荐，无论国内还是国外的嘉宾？速填表单，组委会会为您尽力邀请。"
   },
   "I wanna listen too!": {
-    "en-us": "I wanna listen too!",
+    "en-us": "Like too!",
     "zh-cn": "我还想听"
   },
   "eg. topic": {
