@@ -80,7 +80,7 @@
         <tr data-id="<%=topic._id%>">
           <td><%=topic.name%></td>
           <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary">我想听 +1 | <%= topic.vote.length %></a></td>
+          <td><a href="javascript:;" class="btn btn-primary"><%=resources.translate("I wanna listen it")%> | <%= topic.vote.length %></a></td>
         </tr>
         <% }); %>
       </tbody>
@@ -99,21 +99,21 @@
         <tr data-id="<%=topic._id%>">
           <td><%=topic.name%></td>
           <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary">我想听 +1 | <%= topic.vote.length %></a></td>
+          <td><a href="javascript:;" class="btn btn-primary"><%=resources.translate("I wanna listen it")%> | <%= topic.vote.length %></a></td>
         </tr>
         <% }); %>
       </tbody>
     </table>
     <h3><%= resources.translate("More topics") %></h3>
-    <p>上面的话题都不感兴趣，还不够给力？遗漏了您喜欢的大牛没有邀请？您还有更好的推荐或是自荐，无论国内还是国外的嘉宾？速填表单，组委会会为您尽力邀请。</p>
+    <p><%= resources.translate("Not enough") %></p>
     <div class="well form-inline">
       <fieldset id="topic" class="control-group">
         <input type="hidden" id="id" />
-        <label for="name">话题：</label>
-        <input type="text" id="name" placeholder="比如：JavaScript异步编程" />
-        <label for="speaker">讲师：</label>
-        <input type="text" class="input-medium" id="speaker" placeholder="比如：Ryan Dahl" />
-        <button class='btn btn-primary' id='submit'>我还想听</button>
+        <label for="name"><%= resources.translate("Topic")%>：</label>
+        <input type="text" id="name" placeholder="<%= resources.translate("eg. topic") %>" />
+        <label for="speaker"><%= resources.translate("Speaker")%>：</label>
+        <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.translate("eg. speaker") %>" />
+        <button class='btn btn-primary' id='submit'><%= resources.translate("I wanna listen too!")%></button>
         <span class="help-inline" id='status'>&nbsp;</span>
       </fieldset>
     </div>
