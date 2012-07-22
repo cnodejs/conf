@@ -1,16 +1,16 @@
 $(function () {
-  var topic = $("#name");
+  var topicNode = $("#name");
   var speaker = $("#speaker");
   var status = $("#status");
   var fieldset = $("#topic");
   var preSession = $("#pre-session");
 
-  topic.bind("input", function () {
+  topicNode.bind("input", function () {
     fieldset.removeClass("error");
   });
 
   $("#submit").click(function () {
-    var name = $.trim(topic.val());
+    var name = $.trim(topicNode.val());
     if (!name) {
       status.html("您想听的主题忘填啦");
       fieldset.addClass("error");
@@ -36,6 +36,9 @@ $(function () {
               '</tr>';
             preSession.append(temp);
           }
+          topicNode.val("");
+          speaker.val("");
+          status.html("");
         } else {
           // TODO
         }

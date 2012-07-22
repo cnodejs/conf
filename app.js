@@ -12,7 +12,7 @@ var status = require('./controllers/status');
 
 var app = express.createServer();
 app.use(express.cookieParser('hujs_conf_keyboard_cat'));
-app.use(express.session({cookie: {maxAge: 60000}}));
+app.use(express.session({cookie: {maxAge: 20 * 60000}}));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.csrf());
@@ -55,4 +55,4 @@ app.post('/vote_topic', authRequired, survey.vote);
 // 用于网络监控
 app.get('/status', status.status);
 app.get('/', index.index);
-app.listen(process.argv[2] || 80, process.argv[3]);
+app.listen(process.argv[2] || 80);

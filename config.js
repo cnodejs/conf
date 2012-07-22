@@ -7,6 +7,6 @@ var config = {
     appkey: '3065857112',
     secret: '0e303661ff8fc05e0747d60c0c1e3cf6'
   },
-  db: 'MONGODB ADDRESS';
+  db: 'localhost/conf'
 };
 module.exports = config;

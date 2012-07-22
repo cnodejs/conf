@@ -7,6 +7,8 @@
  * Module dependencies.
  */
 var config = require('./config');
+
+// NAE上module版本有点问题，引用自己提交的版本
 var tapi = require('./node_modules/weibo');
 tapi.init('weibo', config.weibo.appkey, config.weibo.secret, "http://conf.cnodejs.net/callback");
 

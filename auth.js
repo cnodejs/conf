@@ -1,19 +1,26 @@
 /**
- * Auth with everyauth module
+ * Twitter and Github Auth with everyauth module
  */
 
 var everyauth = require('everyauth');
+var mongoskin = require('mongoskin');
 var config = require('./config');
-var self = this;
+
+var users = mongoskin.db(config.db).collection('users');
 
 // Configure Auth
-var users = {};
 
 everyauth.github
   .appId(config.githubClientId)
   .appSecret(config.githubClientSecret)
   .findOrCreateUser(function (session, accessToken, accessTokenSecret, githubUserData) {
-    users[githubUserData.id] = githubUserData;
+    users.insert({
+      id: githubUserData.id,
+      type: 'github',
+      data: githubUserData
+    }, function (err) {
+      // TODO
+    });
     session.authType = 'github';
     return githubUserData;
   })
@@ -23,7 +30,13 @@ everyauth.twitter
   .consumerKey(config.twitterConsumerKey)
   .consumerSecret(config.twitterConsumerSecret)
   .findOrCreateUser(function (session, accessToken, accessTokenSecret, twitterUserData) {
-    users[twitterUserData.id] = twitterUserData;
+    users.insert({
+      id: twitterUserData.id,
+      type: 'twitter',
+      data: twitterUserData
+    }, function (err) {
+      // TODO
+    });
     session.authType = 'twitter';
     return twitterUserData;
   })
@@ -31,14 +44,20 @@ everyauth.twitter
 
 everyauth.everymodule
   .findUserById(function (userId, callback) {
-    return callback(null, users[userId]);
+    users.findOne({ id: userId }, function (err, user) {
+      if (err) return callback(err);
+      callback(null, user.data);
+    });
   })
   .logoutPath('/oauth/logout')
   .handleLogout(function (req, res) {
-    delete users[req.session.auth[req.session.authType].id];
-    req.session.authType = null;
-    req.logout();
-    res.redirect(this.logoutRedirectPath());
-  })
+    var self = this;
+    var id = req.session.auth[req.session.authType].id /* Twitter */ || req.session.auth.userId /* Github */;
+    users.remove({ id: id }, function (err) {
+      req.session.authType = null;
+      req.logout();
+      res.redirect(self.logoutRedirectPath());
+    });
+  });
 
 module.exports = everyauth.middleware;
