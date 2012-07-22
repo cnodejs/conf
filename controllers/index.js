@@ -12,9 +12,13 @@ exports.index = function (req, res, next) {
       resources: req.getResources('index'),
       formal: row.filter(function (topic) {
         return topic.type === "formal";
+      }).sort(function (a, b) {
+        return a.vote.length - b.vote.length;
       }),
       wish: row.filter(function (topic) {
         return topic.type === "wish";
+      }).sort(function (a, b) {
+        return a.vote.length - b.vote.length;
       }),
       user: user || {},
       csrf: req.session._csrf,
