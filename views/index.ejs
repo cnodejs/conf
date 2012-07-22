@@ -70,7 +70,9 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th><%= resources.translate("Topic")%></th><th>演讲嘉宾</th><th>我感兴趣+1</th>
+          <th><%= resources.translate("Topic")%></th>
+          <th><%= resources.translate("Speakers")%></th>
+          <th><%= resources.translate("Interesting") %></th>
         </tr>
       </thead>
       <tbody>
@@ -87,7 +89,9 @@
     <table id="pre-session" class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th><%= resources.translate("Topic")%></th><th>演讲嘉宾</th><th>我感兴趣+1</th>
+          <th><%= resources.translate("Topic")%></th>
+          <th><%= resources.translate("Speakers")%></th>
+          <th><%= resources.translate("Interesting") %></th>
         </tr>
       </thead>
       <tbody>
@@ -100,7 +104,7 @@
         <% }); %>
       </tbody>
     </table>
-    <h3>我还想听</h3>
+    <h3><%= resources.translate("More topics") %></h3>
     <p>上面的话题都不感兴趣，还不够给力？遗漏了您喜欢的大牛没有邀请？您还有更好的推荐或是自荐，无论国内还是国外的嘉宾？速填表单，组委会会为您尽力邀请。</p>
     <div class="well form-inline">
       <fieldset id="topic" class="control-group">

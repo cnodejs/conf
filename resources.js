@@ -85,5 +85,13 @@ exports.index = {
   "Topic": {
     "en-us": "Topic",
     "zh-cn": "话题"
+  },
+  "Interesting": {
+    "en-us": "Interesting+1",
+    "zh-cn": "我感兴趣+1"
+  },
+  "More topics": {
+    "en-us": "More topics",
+    "zh-cn": "我还想听"
   }
 };
