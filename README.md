@@ -1,11 +1,11 @@
 hu.js
 =======
-shanghaijavascript.github.com
+hujs.org
 =============================
 
 Website for 沪JS 2012.
 
-Currently deployed to Aliyun ACE at [http://hujs2012.aliapp.com](http://hujs2012.aliapp.com).
+Currently deployed to NAE at [http://hujs.org](http://hujs.org).
 
 
 DEPLOYMENT
@@ -19,6 +19,6 @@ To deploy use this command from the project root:
 
 ```
 git ftp push -u hujs2012 -p - ftp://ftp.ace.aliyun.com:2222
-``` 
+```
 
 Contact [@thoward](http://github.com/thoward) for deployment password.
