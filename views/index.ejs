@@ -38,24 +38,35 @@
         <div class="btn-group pull-right">
         <% if (user.name) {%>
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-user"></i> <%=user.name%>
+            <img style="width: 18px; height: 18px;" src="<%=user.profile_image_url%>" /> <%=user.name%>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <!--<li><a href="#">Profile</a></li>-->
-            <li class="divider"></li>
+            <!--<li><a href="#">Profile</a></li>
+            <li class="divider"></li>-->
             <li><a href="/ouath/logout">退出</a></li>
           </ul>
         <% } else { %>
-          <a style="float: right;" href="/oauth?blogtype=weibo">
-            <img src="http://www.sinaimg.cn/blog/developer/wiki/240.png" />
+          
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-user"></i> 登录
+            <span class="caret"></span>
           </a>
-          <a href="/oauth?blogtype=tqq">
-            腾讯微博
-          </a>
-          <a href="/oauth?blogtype=github">
-            用<strong>Github</strong>登录
-          </a>
+          <ul class="dropdown-menu">
+            <!--<li><a href="#">Profile</a></li>
+            <li class="divider"></li>-->
+            <li>
+              <a href="/oauth?blogtype=weibo">新浪微博</a>
+            </li>
+            <li>
+              <a href="/oauth?blogtype=tqq">腾讯微博</a>
+            </li>
+            <li>
+              <a href="/oauth?blogtype=github">Github</a>
+            </li>
+          </ul>
+          
+          
         <% }%>
         </div>
       </div>
