@@ -1,7 +1,7 @@
 var topic = require('../proxy/topic');
 
 exports.vote = function (req, res) {
-  var user = req.session.oauthUser;
+  var user = req.session.oauthUser || req.user;
 
   var id = req.body.id;
   var who = user.name;
@@ -19,7 +19,7 @@ exports.vote = function (req, res) {
  * {name: "", speaker: "", vote: [], type: "formal|wish"}
  */
 exports.addTopic = function (req, res) {
-  var user = req.session.oauthUser;
+  var user = req.session.oauthUser || req.user;
 
   var post = req.body;
   var doc = {
