@@ -97,7 +97,7 @@
         <tr data-id="<%=topic._id%>">
           <td><%=topic.name%></td>
           <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%=resources.translate("I wanna listen it")%> | <%= topic.vote.length %></a></td>
+          <td><a href="javascript:;" class="btn btn-primary"><%= topic.vote.length %> | <%=resources.translate("I wanna listen it")%></a></td>
         </tr>
         <% }); %>
       </tbody>
@@ -116,7 +116,7 @@
         <tr data-id="<%=topic._id%>">
           <td><%=topic.name%></td>
           <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%=resources.translate("I wanna listen it")%> | <%= topic.vote.length %></a></td>
+          <td><a href="javascript:;" class="btn btn-primary"><%= topic.vote.length %> | <%=resources.translate("I wanna listen it")%></a></td>
         </tr>
         <% }); %>
       </tbody>
