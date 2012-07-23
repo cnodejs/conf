@@ -58,7 +58,7 @@ var authRequired = function (req, res, next) {
 
 var adminRequired = function (req, res, next) {
   var user = req.session.oauthUser;
-  if (user.t_url === "http://weibo.com/shyvo") {
+  if (config.admins.indexOf(user.t_url) !== -1) {
     next();
   } else {
     res.send({'status': 'fail', 'message': 'unauthorized'}, 401);
