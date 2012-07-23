@@ -2,7 +2,7 @@ var express = require('express');
 var i18n = require('connect-i18n');
 var ejs = require('ejs');
 var Localize = require('localize');
-var weibo = require('weibo');
+var weibo = require('./node_modules/weibo');
 var config = require('./config');
 
 // Controllers
