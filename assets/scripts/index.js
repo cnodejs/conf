@@ -72,7 +72,7 @@ $(function () {
         "_csrf": csrf
       },
       success: function (res) {
-        that.html('我想听 +1 | ' + res.vote).removeClass('btn-primary');
+        that.html(res.vote + ' | 我想听 +1').removeClass('btn-primary');
       },
       error: function (xhr, status) {
         if (xhr.status === 401) {
