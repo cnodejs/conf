@@ -32,7 +32,7 @@ $(function () {
             var temp = '<tr data-id="' + topic._id + '">' +
               '<td>' + topic.name + '</td>' +
               '<td>' + topic.speaker + '</td>' +
-              '<td><a href="javascript:;" class="btn">我想听 +1 | ' + topic.vote.length + '</a></td>'+
+              '<td><a href="javascript:;" class="btn">' + topic.vote.length + ' | 我想听 +1</a></td>'+
               '</tr>';
             preSession.append(temp);
           }
