@@ -46,7 +46,7 @@ $(function () {
       error: function (xhr) {
         if (xhr.status === 401) {
           alert("请先登录");
-          location.href = "/oauth?blogtype=weibo";
+          location.href = "/oauth?blogtype=github";
         } else {
           status.html("服务器错误，请稍后再试");
           fieldset.addClass("error");
@@ -77,7 +77,7 @@ $(function () {
       error: function (xhr, status) {
         if (xhr.status === 401) {
           alert("请先登录");
-          location.href = "/oauth?blogtype=weibo";
+          location.href = "/oauth?blogtype=github";
         } else {
           alert("服务器错误，请稍候再试");
         }
