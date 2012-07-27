@@ -24,8 +24,8 @@
         </a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="#"><%= resources.translate("Homepage")%></a></li>
-            <li><a href="/news"><%= resources.translate("News")%></a></li>
+            <li><a href="#"><%= resources.translate("Homepage")%></a></li>
+            <li class="active"><a href="/news"><%= resources.translate("News")%></a></li>
             <li class="divider-vertical"></li>
             <li><a href="#schedule"><%= resources.translate("Schedule")%></a></li>
             <li><a href="#venue"><%= resources.translate("Venue")%></a></li>
@@ -57,83 +57,40 @@
             <!--<li><a href="#">Profile</a></li>
             <li class="divider"></li>-->
             <li>
-              <a href="/oauth?blogtype=github">Github(推荐)</a>
-            </li>
-            <li>
               <a href="/oauth?blogtype=weibo">新浪微博</a>
             </li>
             <li>
               <a href="/oauth?blogtype=tqq">腾讯微博</a>
             </li>
+            <li>
+              <a href="/oauth?blogtype=github">Github</a>
+            </li>
           </ul>
+          
+          
         <% }%>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="hero-unit">
-      <div class="logo">
-        <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
-      </div>
-      <h1><%= resources.translate("date_city")%></h1>
-      <p><%= resources.translate("introduction")%></p>
-      <h2><%- resources.translate("hashtag")%></h2>
-    </div>
-    <p class="lead"><%= resources.translate("Hu.js coming soon!")%></p>
-    <h2><%= resources.translate("The survey")%></h2>
-    <h3><%= resources.translate("Topics(formal)")%></h3>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th><%= resources.translate("Topic")%></th>
-          <th><%= resources.translate("Speakers")%></th>
-          <th><%= resources.translate("Interesting") %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% formal.forEach(function (topic) { %>
-        <tr data-id="<%=topic._id%>">
-          <td><%=topic.name%></td>
-          <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%= topic.vote.length %> | <%=resources.translate("I wanna listen it")%></a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-    <h3><%= resources.translate("Topics(inviting)")%></h3>
-    <table id="pre-session" class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th><%= resources.translate("Topic")%></th>
-          <th><%= resources.translate("Speakers")%></th>
-          <th><%= resources.translate("Interesting") %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% wish.forEach(function (topic) { %>
-        <tr data-id="<%=topic._id%>">
-          <td><%=topic.name%></td>
-          <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%= topic.vote.length %> | <%=resources.translate("I wanna listen it")%></a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-    <h3><%= resources.translate("More topics") %></h3>
-    <p><%= resources.translate("Not enough") %></p>
-    <div class="well form-inline">
-      <fieldset id="topic" class="control-group">
-        <input type="hidden" id="id" />
-        <label for="name"><%= resources.translate("Topic")%>：</label>
-        <input type="text" id="name" placeholder="<%= resources.translate("eg. topic") %>" />
-        <label for="speaker"><%= resources.translate("Speakers")%>：</label>
-        <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.translate("eg. speaker") %>" />
-        <button class='btn btn-primary' id='submit'><%= resources.translate("I wanna listen too!")%></button>
-        <span class="help-inline" id='status'>&nbsp;</span>
-      </fieldset>
-    </div>
-    <hr />
+    <section class="news_wrapper">
+      <h1><%= resources.translate("News")%>:</h1>
+      <hr />
+      <% for (var i = 0; i < news.length; i++) { %>
+      <article class="news" id="<%=news[i]._id %>">
+        <header>
+          <h2><a href="/news/<%=news[i]._id %>"><%=news[i].title %></a></h2>
+          <span><%= resources.translate("Date")%>: <%=news[i].date.toLocaleDateString() %></span>
+        </header>
+        <div class="content">
+          <%-news[i].content.substr(0, 100) %>...
+        </div>
+        <a href="/news/<%=news[i]._id %>" class="readmore btn pull-right"><%= resources.translate("Read more")%></a>
+      </article>
+      <hr />
+      <% }; %>
+    </section>
     <footer>
       &copy;hu.js 2012
     </footer>

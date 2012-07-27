@@ -25,6 +25,7 @@
         <div class="nav-collapse">
           <ul class="nav">
             <li class="active"><a href="#"><%= resources.translate("Homepage")%></a></li>
+            <li><a href="/news"><%= resources.translate("News")%></a></li>
             <li class="divider-vertical"></li>
             <li><a href="#schedule"><%= resources.translate("Schedule")%></a></li>
             <li><a href="#venue"><%= resources.translate("Venue")%></a></li>
@@ -74,7 +75,7 @@
           <td><%=topic.name%></td>
           <td><%=topic.speaker%></td>
           <td><%= topic.vote.length %></td>
-          <td><a href="javascript:;" class="select btn btn-primary">选为预选话题</td>
+          <td><a href="javascript:;" class="select btn btn-primary">选为预选话题</a></td>
           <td><a href="javascript:;" class="view">查看</a></td>
         </tr>
         <% }); %>
