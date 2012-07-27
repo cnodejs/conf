@@ -89,7 +89,7 @@ exports.addNews = function (req, res, next) {
 
   news.addNews(doc, function (err, news) {
     if (err) {
-      res.send({'status': 'fail', 'message': 'unauthorized'}, 500);
+      next(err);
       return;
     }
     res.send({'status': 'success', 'news': news});
@@ -107,7 +107,7 @@ exports.editNews = function (req, res, next) {
 
   news.editNews(post.id, doc, function (err, record) {
     if (err) {
-      res.send({'status': 'fail', 'message': 'unauthorized'}, 500);
+      next(err);
       return;
     }
     res.send({'status': 'success', 'news': news});
@@ -176,7 +176,7 @@ exports.addPage = function (req, res, next) {
 
   pages.addPage(doc, function (err, page) {
     if (err) {
-      res.send({'status': 'fail', 'message': 'unauthorized'}, 500);
+      next(err);
       return;
     }
     res.send({'status': 'success', 'page': page});
@@ -193,7 +193,7 @@ exports.editPage = function (req, res, next) {
 
   pages.editPage(post.id, doc, function (err, record) {
     if (err) {
-      res.send({'status': 'fail', 'message': 'unauthorized'}, 500);
+      next(err);
       return;
     }
     res.send({'status': 'success', 'page': page});
