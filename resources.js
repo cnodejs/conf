@@ -113,5 +113,57 @@ exports.index = {
   "eg. speaker": {
     "en-us": "eg. TJ",
     "zh-cn": "比如：老赵"
+  },
+  "Edit": {
+    "en-us": "Edit",
+    "zh-cn": "编辑"
+  },
+  "View": {
+    "en-us": "View",
+    "zh-cn": "查看"
+  },
+  "Sign": {
+    "en-us": "Sign",
+    "zh-cn": "标志"
+  },
+  "News": {
+    "en-us": "News",
+    "zh-cn": "新闻"
+  },
+  "Title": {
+    "en-us": "Title",
+    "zh-cn": "标题"
+  },
+  "Remove": {
+    "en-us": "Remove",
+    "zh-cn": "删除"
+  },
+  "Date": {
+    "en-us": "Date",
+    "zh-cn": "日期"
+  },
+  "Content": {
+    "en-us": "Content",
+    "zh-cn": "内容"
+  },
+  "Read more": {
+    "en-us": "Read more",
+    "zh-cn": "阅读更多"
+  },
+  "More news": {
+    "en-us": "More News",
+    "zh-cn": "更多新闻"
+  },
+  "eg. title": {
+    "en-us": "eg. Hu.js Conference will start on 14 Sept.",
+    "zh-cn": "比如：沪JS大会将会在九月14日隆重举行。"
+  },
+  "eg. sign": {
+    "en-us": "eg. about",
+    "zh-cn": "比如：关于"
+  },
+  "Page": {
+    "en-us": "Page",
+    "zh-cn": "页面"
   }
 };

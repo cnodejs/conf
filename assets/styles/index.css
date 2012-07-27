@@ -50,3 +50,10 @@ span.logo_hanzi {
   background-position: 1px .5px;
   background-size: 22px;
 }
+.content {
+  margin-top: 10px;
+}
+.readmore {
+  margin-top: -20px;
+  margin-right: 10px;
+}
