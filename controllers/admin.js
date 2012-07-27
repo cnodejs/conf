@@ -7,7 +7,7 @@ exports.topics = function (req, res, next) {
   topic.getTopics(function (err, row) {
     if (err) {
       // TODO
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.render('admin', {
@@ -39,7 +39,7 @@ exports.updateTopic = function (req, res, next) {
   }
   topic.changeTopic(post.id, update, function (err) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({"status": "success"});
@@ -51,7 +51,7 @@ exports.viewTopic = function (req, res, next) {
   var id = get.id;
   topic.findOne(id, function (err, record) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({"status": "success", "topic": record});
@@ -64,7 +64,7 @@ exports.news = function (req, res, next) {
   news.getNews(function (err, row) {
     if (err) {
       // TODO
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.render('admin-news', {
@@ -119,7 +119,7 @@ exports.viewNews = function (req, res, next) {
   var id = get.id;
   news.findOne(id, function (err, record) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({"status": "success", "news": record});
@@ -132,7 +132,7 @@ exports.removeNews = function (req, res, next) {
   
   news.removeNews(id, function (err, record) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({"status": "success", "news": record});
@@ -145,6 +145,7 @@ exports.pages = function (req, res, next) {
   pages.getPages(function (err, row) {
     if (err) {
       // TODO
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       next(err);
       return;
     }
@@ -176,7 +177,7 @@ exports.addPage = function (req, res, next) {
 
   pages.addPage(doc, function (err, page) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({'status': 'success', 'page': page});
@@ -193,7 +194,7 @@ exports.editPage = function (req, res, next) {
 
   pages.editPage(post.id, doc, function (err, record) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({'status': 'success', 'page': page});
@@ -205,7 +206,7 @@ exports.viewPage = function (req, res, next) {
   var sign = get.sign;
   pages.findOne(sign, function (err, record) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({"status": "success", "page": record});
@@ -218,7 +219,7 @@ exports.removePage = function (req, res, next) {
 
   pages.removePage(id, function (err, record) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({"status": "success", "page": record});
