@@ -6,7 +6,7 @@
   <script>
     var csrf = '<%=csrf%>';
   </script>
-  <script src="/assets/scripts/index.js"></script>
+  <script src="/assets/scripts/admin-pages.js"></script>
   <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/assets/styles/index.css">
 </head>
@@ -24,7 +24,7 @@
         </a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="#"><%= resources.translate("Homepage")%></a></li>
+            <li><a href="#"><%= resources.translate("Homepage")%></a></li>
             <li><a href="/news"><%= resources.translate("News")%></a></li>
             <li class="divider-vertical"></li>
             <li><a href="#schedule"><%= resources.translate("Schedule")%></a></li>
@@ -72,64 +72,65 @@
     </div>
   </div>
   <div class="container">
-    <div class="hero-unit">
-      <div class="logo">
-        <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
-      </div>
-      <h1><%= resources.translate("date_city")%></h1>
-      <p><%= resources.translate("introduction")%></p>
-      <h2><%- resources.translate("hashtag")%></h2>
-    </div>
-    <p class="lead"><%= resources.translate("Hu.js coming soon!")%></p>
-    <h2><%= resources.translate("The survey")%></h2>
-    <h3><%= resources.translate("Topics(formal)")%></h3>
-    <table class="table table-bordered table-striped">
+    <h2><%= resources.translate("Page")%></h2>
+    <hr />
+    <h3>Chinese:</h3>
+    <table id="formal-session" class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th><%= resources.translate("Topic")%></th>
-          <th><%= resources.translate("Speakers")%></th>
-          <th><%= resources.translate("Interesting") %></th>
+          <th><%= resources.translate("Title")%></th>
+          <th><%= resources.translate("Sign")%></th>
+          <th><%= resources.translate("Edit")%></th>
+          <th><%= resources.translate("Remove")%></th>
+          <th><%= resources.translate("View")%></th>
         </tr>
       </thead>
       <tbody>
-        <% formal.forEach(function (topic) { %>
-        <tr data-id="<%=topic._id%>">
-          <td><%=topic.name%></td>
-          <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%= topic.vote.length %> | <%=resources.translate("I wanna listen it")%></a></td>
+        <% zh.forEach(function (page) { %>
+        <tr data-id="<%=page._id%>">
+          <td><%=page.title%></td>
+          <td><%=page.sign%></td>
+          <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.translate("Edit")%></td>
+          <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.translate("Remove")%></td>
+          <td><a href="/page/<%=page.sign%>" class="btn"><%= resources.translate("View")%></a></td>
         </tr>
         <% }); %>
       </tbody>
     </table>
-    <h3><%= resources.translate("Topics(inviting)")%></h3>
-    <table id="pre-session" class="table table-bordered table-striped">
+    <h3>English:</h3>
+    <table id="formal-session" class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th><%= resources.translate("Topic")%></th>
-          <th><%= resources.translate("Speakers")%></th>
-          <th><%= resources.translate("Interesting") %></th>
+          <th><%= resources.translate("Title")%></th>
+          <th><%= resources.translate("Sign")%></th>
+          <th><%= resources.translate("Edit")%></th>
+          <th><%= resources.translate("Remove")%></th>
+          <th><%= resources.translate("View")%></th>
         </tr>
       </thead>
       <tbody>
-        <% wish.forEach(function (topic) { %>
-        <tr data-id="<%=topic._id%>">
-          <td><%=topic.name%></td>
-          <td><%=topic.speaker%></td>
-          <td><a href="javascript:;" class="btn btn-primary"><%= topic.vote.length %> | <%=resources.translate("I wanna listen it")%></a></td>
+        <% en.forEach(function (page) { %>
+        <tr data-id="<%=page._id%>">
+          <td><%=page.title%></td>
+          <td><%=page.sign%></td>
+          <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.translate("Edit")%></td>
+          <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.translate("Remove")%></td>
+          <td><a href="/page/<%=page.sign%>" class="btn"><%= resources.translate("View")%></a></td>
         </tr>
         <% }); %>
       </tbody>
     </table>
-    <h3><%= resources.translate("More topics") %></h3>
     <p><%= resources.translate("Not enough") %></p>
-    <div class="well form-inline">
-      <fieldset id="topic" class="control-group">
+    <div class="well">
+      <fieldset id="news" class="control-group">
         <input type="hidden" id="id" />
-        <label for="name"><%= resources.translate("Topic")%>：</label>
-        <input type="text" id="name" placeholder="<%= resources.translate("eg. topic") %>" />
-        <label for="speaker"><%= resources.translate("Speakers")%>：</label>
-        <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.translate("eg. speaker") %>" />
-        <button class='btn btn-primary' id='submit'><%= resources.translate("I wanna listen too!")%></button>
+        <label for="title"><%= resources.translate("Title")%>：</label>
+        <input type="text" id="title" placeholder="<%= resources.translate("eg. title") %>" style="width:99%;" />
+        <label for="sign"><%= resources.translate("Sign")%>：</label>
+        <input type="text" id="sign" placeholder="<%= resources.translate("eg. sign") %>" />
+        <label for="content"><%= resources.translate("Content")%>：</label>
+        <textarea id="content" style="width:99%;min-height:300px;"></textarea>
+        <button class='btn btn-primary' id='submit'>提交</button>
         <span class="help-inline" id='status'>&nbsp;</span>
       </fieldset>
     </div>
