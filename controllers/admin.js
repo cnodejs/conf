@@ -107,7 +107,7 @@ exports.editNews = function (req, res, next) {
 
   news.editNews(post.id, doc, function (err, record) {
     if (err) {
-      next(err);
+      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
     res.send({'status': 'success', 'news': news});
@@ -146,7 +146,6 @@ exports.pages = function (req, res, next) {
     if (err) {
       // TODO
       res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
-      next(err);
       return;
     }
     res.render('admin-pages', {
