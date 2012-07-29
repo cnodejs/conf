@@ -1,10 +1,33 @@
 <div class="well">
+  <div>
+<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 142 , _h = 66;
+  var param = {
+    url:location.href,
+    type:'4',
+    count:'1', /**是否显示分享数，1显示(可选)*/
+    appkey:'3065857112', /**您申请的应用appkey,显示分享来源(可选)*/
+    title: "#沪JS#是一个为中国JavaScript和Node.js研发者社区举办的会议",
+    ralateUid:'', /**关联用户的UID，分享微博会@该用户(可选)*/
+    language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script>
+  </div>
+  <hr />
   <h3>
   参与投票
   </h3>
   <div>
   沪JS正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾
-  <a class="btn btn-primary" href="/survey">参与调查问卷 »</a>
+  <a class="btn" href="/survey">参与调查问卷 »</a>
   </div>
   <hr />
   <h3>
@@ -12,6 +35,6 @@
   </h3>
   <div>
   目前我们已经确定了部分国内外的JavaScript大牛，他们为我们带来一批相当有含金量的话题
-  <a class="btn btn-primary" href="/speakers">查看正式话题 »</a>
+  <a href="/speakers">查看演讲嘉宾 »</a>
   </div>
 </div>

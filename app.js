@@ -67,7 +67,7 @@ var adminRequired = function (req, res, next) {
     res.send({'status': 'fail', 'message': 'unauthorized'}, 401);
   }
 };
-console.log(todo);
+
 app.get('/survey', survey.inviteTopics);
 app.get('/schedule', todo.comingsoon);
 app.get('/venue', todo.comingsoon);
