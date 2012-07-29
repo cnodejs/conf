@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span9">
-        <h3><%= resources.translate("Topics(formal)")%></h3>
+        <h2>演讲嘉宾<small>外籍嘉宾</small></h2>
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
@@ -12,7 +12,24 @@
             </tr>
           </thead>
           <tbody>
-            <% topics.forEach(function (topic) { %>
+            <% foreign.forEach(function (topic) { %>
+            <tr data-id="<%=topic._id%>">
+              <td><%=topic.name%></td>
+              <td><%=topic.speaker%></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        <h2>演讲嘉宾<small>国内嘉宾</small></h2>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th><%= resources.translate("Topic")%></th>
+              <th><%= resources.translate("Speakers")%></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% local.forEach(function (topic) { %>
             <tr data-id="<%=topic._id%>">
               <td><%=topic.name%></td>
               <td><%=topic.speaker%></td>

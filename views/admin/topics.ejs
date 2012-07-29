@@ -2,22 +2,57 @@
 <script src="/assets/scripts/admin_topics.js"></script>
 <div class="container">
   <h2><%= resources.translate("The survey")%></h2>
-  <h3><%= resources.translate("Topics(formal)")%></h3>
-  <table id="formal-session" class="table table-bordered table-striped">
+  <h3>外籍嘉宾</h3>
+  <table id="foreign-session" class="table table-bordered table-striped">
     <thead>
       <tr>
         <th><%= resources.translate("Topic")%></th>
+        <th>话题简介</th>
         <th><%= resources.translate("Speakers")%></th>
+        <th>嘉宾简介</th>
+        <th>Github</th>
         <th>人气值</th>
         <th>操作</th>
         <th>查看</th>
       </tr>
     </thead>
     <tbody>
-      <% formal.forEach(function (topic) { %>
+      <% foreign.forEach(function (topic) { %>
       <tr data-id="<%=topic._id%>" data-type="<%=topic.type%>">
         <td><%=topic.name%></td>
+        <td><%=topic.topicInfo%></td>
         <td><%=topic.speaker%></td>
+        <td><%=topic.speakerInfo%></td>
+        <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : '暂无'%></td>
+        <td><%= topic.vote.length %></td>
+        <td><a href="javascript:;" class="select btn btn-primary">选为预选话题</a></td>
+        <td><a href="javascript:;" class="view">查看</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <h3>国内嘉宾</h3>
+  <table id="local-session" class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th><%= resources.translate("Topic")%></th>
+        <th>话题简介</th>
+        <th><%= resources.translate("Speakers")%></th>
+        <th>嘉宾简介</th>
+        <th>Github</th>
+        <th>人气值</th>
+        <th>操作</th>
+        <th>查看</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% local.forEach(function (topic) { %>
+      <tr data-id="<%=topic._id%>" data-type="<%=topic.type%>">
+        <td><%=topic.name%></td>
+        <td><%=topic.topicInfo%></td>
+        <td><%=topic.speaker%></td>
+        <td><%=topic.speakerInfo%></td>
+        <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : '暂无'%></td>
         <td><%= topic.vote.length %></td>
         <td><a href="javascript:;" class="select btn btn-primary">选为预选话题</a></td>
         <td><a href="javascript:;" class="view">查看</a></td>
@@ -48,17 +83,53 @@
       <% }); %>
     </tbody>
   </table>
-  <h3><%= resources.translate("More topics") %></h3>
-  <p><%= resources.translate("Not enough") %></p>
-  <div class="well form-inline">
+  <h3>编辑</h3>
+  <div class="well form-horizontal">
     <fieldset id="topic" class="control-group">
       <input type="hidden" id="id" />
-      <label for="name"><%= resources.translate("Topic")%>：</label>
-      <input type="text" id="name" placeholder="<%= resources.translate("eg. topic") %>" />
-      <label for="speaker"><%= resources.translate("Speakers")%>：</label>
-      <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.translate("eg. speaker") %>" />
-      <button class='btn btn-primary' id='submit'>更新</button>
-      <span class="help-inline" id='status'>&nbsp;</span>
+      <div class="control-group">
+        <label class="control-label" for="name"><%= resources.translate("Topic")%>：</label>
+        <div class="controls">
+          <input type="text" class="input-xlarge" id="name" placeholder="<%= resources.translate("eg. topic") %>" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="topic_intro">主题简介</label>
+        <div class="controls">
+          <textarea class="input-xlarge" id="topic_intro" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="language">语种：</label>
+        <div class="controls">
+          <select id="language">
+            <option value="english">English</option>
+            <option value="chinese">中文</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="speaker">演讲者：</label>
+        <div class="controls">
+          <input type="text" class="input-xlarge" id="speaker" placeholder="<%= resources.translate("eg. speaker") %>" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="speaker_intro">嘉宾简介</label>
+        <div class="controls">
+          <textarea class="input-xlarge" id="speaker_intro" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="github">Github：</label>
+        <div class="controls">
+          <input class="input-xlarge" id="github" type="text" />
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class='btn btn-primary' id='submit'>更新</button>
+        <span class="help-inline" id='status'>&nbsp;</span>
+      </div>
     </fieldset>
   </div>
 </div>

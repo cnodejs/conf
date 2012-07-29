@@ -11,7 +11,14 @@ exports.speakers = function (req, res, next) {
     res.render('speakers', {
       viewname: 'speakers',
       resources: req.getResources('index'),
-      topics: row.sort(function (a, b) {
+      foreign: row.filter(function (topic) {
+        return topic.type === "formal" && topic.language === "english";
+      }).sort(function (a, b) {
+        return b.vote.length - a.vote.length;
+      }),
+      local: row.filter(function (topic) {
+        return topic.type === "formal" && topic.language !== "english";
+      }).sort(function (a, b) {
         return b.vote.length - a.vote.length;
       }),
       user: user || {},

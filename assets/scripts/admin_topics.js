@@ -34,6 +34,10 @@ $(function () {
   var topicNode = $("#name");
   var speaker = $("#speaker");
   var status = $("#status");
+  var languageNode = $("#language");
+  var githubNode = $("#github");
+  var topicInfoNode = $("#topic_intro");
+  var speakerInfoNode = $("#speaker_intro");
   var fieldset = $("#topic");
 
   $(".container").on("click", 'td a.view', function (event) {
@@ -54,6 +58,9 @@ $(function () {
         hiddenID.val(topic._id);
         topicNode.val(topic.name);
         speaker.val(topic.speaker);
+        topicInfoNode.val(topic.topicInfo);
+        speakerInfoNode.val(topic.speakerInfo);
+        githubNode.val(topic.github);
         topicNode.focus();
       },
       error: function (xhr, status) {
@@ -67,7 +74,7 @@ $(function () {
     });
   });
 
-    topicNode.bind("input", function () {
+  topicNode.bind("input", function () {
     fieldset.removeClass("error");
   });
 
@@ -84,7 +91,11 @@ $(function () {
       data: {
         "id": hiddenID.val(),
         "name": name,
+        "language": languageNode.val(),
         "speaker": speaker.val(),
+        "github": githubNode.val(),
+        "speakerInfo": speakerInfoNode.val(),
+        "topicInfo": topicInfoNode.val(),
         "_csrf": csrf
       },
       success: function (res) {

@@ -12,8 +12,11 @@ exports.topics = function (req, res, next) {
     }
     res.render('admin/topics', {
       resources: req.getResources('index'),
-      formal: row.filter(function (topic) {
-        return topic.type === "formal";
+      foreign: row.filter(function (topic) {
+        return topic.type === "formal" && topic.language === "english";
+      }),
+      local: row.filter(function (topic) {
+        return topic.type === "formal" && topic.language !== "english";
       }),
       wish: row.filter(function (topic) {
         return topic.type === "wish";
@@ -34,8 +37,20 @@ exports.updateTopic = function (req, res, next) {
   if (post.name) {
     update.name = post.name;
   }
+  if (post.topicInfo) {
+    update.topicInfo = post.topicInfo;
+  }
   if (post.speaker) {
     update.speaker = post.speaker;
+  }
+  if (post.speakerInfo) {
+    update.speakerInfo = post.speakerInfo;
+  }
+  if (post.github) {
+    update.github = post.github;
+  }
+  if (post.language) {
+    update.language = post.language;
   }
   topic.changeTopic(post.id, update, function (err) {
     if (err) {
