@@ -9,6 +9,7 @@
             <tr>
               <th><%= resources.translate("Topic")%></th>
               <th><%= resources.translate("Speakers")%></th>
+              <th>Github</th>
             </tr>
           </thead>
           <tbody>
@@ -16,6 +17,7 @@
             <tr data-id="<%=topic._id%>">
               <td><%=topic.name%></td>
               <td><%=topic.speaker%></td>
+              <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : '暂无'%></td>
             </tr>
             <% }); %>
           </tbody>
@@ -26,6 +28,7 @@
             <tr>
               <th><%= resources.translate("Topic")%></th>
               <th><%= resources.translate("Speakers")%></th>
+              <th>Github</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +36,7 @@
             <tr data-id="<%=topic._id%>">
               <td><%=topic.name%></td>
               <td><%=topic.speaker%></td>
+              <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : '暂无'%></td>
             </tr>
             <% }); %>
           </tbody>
