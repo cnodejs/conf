@@ -1,7 +1,8 @@
 <% include header %>
-  <div class="container">
-    <section class="page_wrapper">
-      <article class="page" id="<%=page.id %>">
+<div class="container">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span9 page" id="<%=page.id %>">
         <header>
           <h1><%=page.title %></h1>
         </header>
@@ -9,7 +10,10 @@
         <div class="content">
           <%-page.content %>
         </div>
-      </article>
-    </section>
+      </div>
+      <div class="span3">
+        <% include sidebar %>
+      </div>
+    </div>
   </div>
 <% include footer %>
