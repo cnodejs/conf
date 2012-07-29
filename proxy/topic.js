@@ -4,8 +4,12 @@ var db = mongo.db(config.db);
 
 var topics = db.collection('topics');
 
-exports.getTopics = function (callback) {
-  topics.find().toArray(callback);
+exports.getFormalTopics = function (callback) {
+  topics.find({type: 'formal'}).toArray(callback);
+};
+
+exports.getInviteTopics = function (callback) {
+  topics.find({type: 'wish'}).toArray(callback);
 };
 
 exports.plus = function (id, who, callback) {

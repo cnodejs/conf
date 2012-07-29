@@ -12,6 +12,7 @@ var status = require('./controllers/status');
 var news = require('./controllers/news');
 var page = require('./controllers/page');
 var admin = require('./controllers/admin');
+var todo = require('./controllers/todo');
 
 var app = express.createServer();
 app.use(express.cookieParser('hujs_conf_keyboard_cat'));
@@ -66,8 +67,17 @@ var adminRequired = function (req, res, next) {
     res.send({'status': 'fail', 'message': 'unauthorized'}, 401);
   }
 };
+console.log(todo);
+app.get('/survey', survey.inviteTopics);
+app.get('/schedule', todo.comingsoon);
+app.get('/venue', todo.comingsoon);
+app.get('/sponsors', todo.comingsoon);
+app.get('/community', todo.comingsoon);
+app.get('/about', todo.comingsoon);
+app.get('/contact', todo.comingsoon);
 
 // topics
+app.get('/speakers', survey.speakers);
 app.post('/add_topic', authRequired, survey.addTopic);
 app.post('/vote_topic', authRequired, survey.vote);
 app.get('/admin/topics', authRequired, adminRequired, admin.topics);

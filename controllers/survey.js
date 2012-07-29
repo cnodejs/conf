@@ -1,5 +1,45 @@
 var topic = require('../proxy/topic');
 
+exports.speakers = function (req, res, next) {
+  var user = req.session.oauthUser;
+  topic.getFormalTopics(function (err, row) {
+    if (err) {
+      // TODO
+      next(err);
+      return;
+    }
+    res.render('speakers', {
+      viewname: 'speakers',
+      resources: req.getResources('index'),
+      topics: row.sort(function (a, b) {
+        return b.vote.length - a.vote.length;
+      }),
+      user: user || {},
+      csrf: req.session._csrf
+    });
+  });
+};
+
+exports.inviteTopics = function (req, res, next) {
+  var user = req.session.oauthUser;
+  topic.getInviteTopics(function (err, row) {
+    if (err) {
+      // TODO
+      next(err);
+      return;
+    }
+    res.render('survey', {
+      viewname: 'survey',
+      resources: req.getResources('index'),
+      topics: row.sort(function (a, b) {
+        return b.vote.length - a.vote.length;
+      }),
+      user: user || {},
+      csrf: req.session._csrf
+    });
+  });
+};
+
 exports.vote = function (req, res) {
   var user = req.session.oauthUser;
 

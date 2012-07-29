@@ -46,7 +46,9 @@ span.logo_hanzi {
   border-radius: 2px;
   float: right;
   padding: 2px 5px 2px 25px;
-  background: url('https://github.com/favicon.ico') whiteSmoke no-repeat;
+  background-image: url('https://github.com/favicon.ico')；
+  background-color: whiteSmoke;
+  background-repeat: no-repeat;
   background-position: 1px .5px;
   background-size: 22px;
 }
@@ -56,4 +58,8 @@ span.logo_hanzi {
 .readmore {
   margin-top: -20px;
   margin-right: 10px;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }

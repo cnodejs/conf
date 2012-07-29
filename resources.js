@@ -34,6 +34,10 @@ exports.index = {
     "en-us": "Schedule",
     "zh-cn": "日程安排"
   },
+  "Survey": {
+    "en-us": "Survey",
+    "zh-cn": "调查问卷"
+  },
   "Venue": {
     "en-us": "Venue",
     "zh-cn": "会议场地"
