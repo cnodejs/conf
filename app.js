@@ -89,7 +89,7 @@ app.get('/news', news.overview);
 app.get('/news/:id', news.single);
 app.get('/admin/news', authRequired, adminRequired, admin.news);
 app.post('/admin/add_news', authRequired, adminRequired, admin.addNews);
-app.del('/admin/del_news', authRequired, adminRequired, admin.removeNews);
+app.del('/admin/news', authRequired, adminRequired, admin.removeNews);
 app.get('/admin/view_news', authRequired, adminRequired, admin.viewNews);
 app.post('/admin/edit_news', authRequired, adminRequired, admin.editNews);
 
@@ -99,7 +99,7 @@ app.get('/admin/pages', authRequired, adminRequired, admin.pages);
 app.post('/admin/add_page', authRequired, adminRequired, admin.addPage);
 app.get('/admin/view_page', authRequired, adminRequired, admin.viewPage);
 app.post('/admin/edit_page', authRequired, adminRequired, admin.editPage);
-app.del('/admin/del_page', authRequired, adminRequired, admin.removePage);
+app.del('/admin/page', authRequired, adminRequired, admin.removePage);
 app.get('/admin/', function (req, res, next) {
   res.redirect("/admin/topics");
 });

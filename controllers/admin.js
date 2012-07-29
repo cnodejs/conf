@@ -68,6 +68,7 @@ exports.news = function (req, res, next) {
       return;
     }
     res.render('admin/news', {
+      viewname: "news",
       resources: req.getResources('index'),
       news: row,
       user: user || {},
@@ -149,6 +150,7 @@ exports.pages = function (req, res, next) {
       return;
     }
     res.render('admin/pages', {
+      viewname: "pages",
       resources: req.getResources('index'),
       en: row.filter(function (page) {
         return page.language === "en-us";
