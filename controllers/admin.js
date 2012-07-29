@@ -7,10 +7,10 @@ exports.topics = function (req, res, next) {
   topic.getTopics(function (err, row) {
     if (err) {
       // TODO
-      res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
+      res.send(500, {'status': 'fail', 'message': 'Internal Server Error'});
       return;
     }
-    res.render('admin', {
+    res.render('admin/index', {
       resources: req.getResources('index'),
       formal: row.filter(function (topic) {
         return topic.type === "formal";
@@ -18,9 +18,9 @@ exports.topics = function (req, res, next) {
       wish: row.filter(function (topic) {
         return topic.type === "wish";
       }),
+      viewname: "topics",
       user: user || {},
-      csrf: req.session._csrf,
-      layout: false
+      csrf: req.session._csrf
     });
   });
 };
@@ -111,7 +111,7 @@ exports.editNews = function (req, res, next) {
       return;
     }
     res.send({'status': 'success', 'news': news});
-  })
+  });
 };
 
 exports.viewNews = function (req, res, next) {

@@ -50,13 +50,13 @@ var authRequired = function (req, res, next) {
   if (!user) {
     var accept = req.headers.accept || '';
     if (~accept.indexOf('json')) {
-      res.send({'status': 'fail', 'message': 'unauthorized'}, 401);
+      res.send(401, {'status': 'fail', 'message': 'unauthorized'});
     } else {
       res.redirect('/');
     }
     return;
   }
-  next();
+  return next();
 };
 
 var adminRequired = function (req, res, next) {
@@ -64,7 +64,7 @@ var adminRequired = function (req, res, next) {
   if (config.admins.indexOf(user.t_url) !== -1) {
     next();
   } else {
-    res.send({'status': 'fail', 'message': 'unauthorized'}, 401);
+    res.send(401, {'status': 'fail', 'message': 'unauthorized'});
   }
 };
 
@@ -100,6 +100,9 @@ app.post('/admin/add_page', authRequired, adminRequired, admin.addPage);
 app.get('/admin/view_page', authRequired, adminRequired, admin.viewPage);
 app.post('/admin/edit_page', authRequired, adminRequired, admin.editPage);
 app.del('/admin/del_page', authRequired, adminRequired, admin.removePage);
+app.get('/admin/', function (req, res, next) {
+  res.redirect("/admin/topics");
+});
 
 // 用于网络监控
 app.get('/status', status.status);

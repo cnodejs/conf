@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= resources.translate("Hu.js coming soon!")%></title>
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script>
+    var csrf = '<%=csrf%>';
+  </script>
+  <script src="/assets/scripts/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/styles/index.css">
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">
+          <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
+        </a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="<%= (viewname === 'home' ? 'active' : '')%>"><a href="/admin/"><%= resources.translate("Homepage")%></a></li>
+            <li class="divider-vertical"></li>
+            <li class="<%= (viewname === 'topics' ? 'active' : '')%>"><a href="/admin/topics">调查问卷</a></li>
+            <!--<li><a href="/news"><%= resources.translate("News")%></a></li>-->
+            <li class="<%= (viewname === 'pages' ? 'active' : '')%>"><a href="/admin/pages">页面设置</a></li>
+            <li class="<%= (viewname === 'news' ? 'active' : '')%>"><a href="/admin/news">新闻设置</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+        <div class="btn-group pull-right">
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <img style="width: 18px; height: 18px;" src="<%=user.profile_image_url%>" /> <%=user.name%>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <!--<li><a href="#">Profile</a></li>
+            <li class="divider"></li>-->
+            <li><a href="/ouath/logout">退出</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
