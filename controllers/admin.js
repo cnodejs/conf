@@ -10,7 +10,7 @@ exports.topics = function (req, res, next) {
       res.send(500, {'status': 'fail', 'message': 'Internal Server Error'});
       return;
     }
-    res.render('admin/index', {
+    res.render('admin/topics', {
       resources: req.getResources('index'),
       formal: row.filter(function (topic) {
         return topic.type === "formal";
@@ -67,7 +67,7 @@ exports.news = function (req, res, next) {
       res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
-    res.render('admin-news', {
+    res.render('admin/news', {
       resources: req.getResources('index'),
       news: row,
       user: user || {},
@@ -148,7 +148,7 @@ exports.pages = function (req, res, next) {
       res.send({'status': 'fail', 'message': 'Internal Server Error'}, 500);
       return;
     }
-    res.render('admin-pages', {
+    res.render('admin/pages', {
       resources: req.getResources('index'),
       en: row.filter(function (page) {
         return page.language === "en-us";
@@ -197,7 +197,7 @@ exports.editPage = function (req, res, next) {
       return;
     }
     res.send({'status': 'success', 'page': page});
-  })
+  });
 };
 
 exports.viewPage = function (req, res, next) {
