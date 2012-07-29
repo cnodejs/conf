@@ -1,106 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title><%= resources.translate("Hu.js coming soon!")%></title>
-  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-  <script>
-    var csrf = '<%=csrf%>';
-  </script>
-  <script src="/assets/scripts/index.js"></script>
-  <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="/assets/styles/index.css">
-</head>
-<body>
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="/">
-          <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
-        </a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li><a href="#"><%= resources.translate("Homepage")%></a></li>
-            <li class="active"><a href="/news"><%= resources.translate("News")%></a></li>
-            <li class="divider-vertical"></li>
-            <li><a href="#schedule"><%= resources.translate("Schedule")%></a></li>
-            <li><a href="#venue"><%= resources.translate("Venue")%></a></li>
-            <li><a href="#speakers"><%= resources.translate("Speakers")%></a></li>
-            <li><a href="#sponsors"><%= resources.translate("Sponsors")%></a></li>
-            <li><a href="#community"><%= resources.translate("Community")%></a></li>
-            <li><a href="#about"><%= resources.translate("About")%></a></li>
-            <li><a href="#contact"><%= resources.translate("Contact")%></a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-        <div class="btn-group pull-right">
-        <% if (user.name) {%>
-          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <img style="width: 18px; height: 18px;" src="<%=user.profile_image_url%>" /> <%=user.name%>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <!--<li><a href="#">Profile</a></li>
-            <li class="divider"></li>-->
-            <li><a href="/ouath/logout">退出</a></li>
-          </ul>
-        <% } else { %>
-          
-          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-user"></i> 登录
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <!--<li><a href="#">Profile</a></li>
-            <li class="divider"></li>-->
-            <li>
-              <a href="/oauth?blogtype=weibo">新浪微博</a>
-            </li>
-            <li>
-              <a href="/oauth?blogtype=tqq">腾讯微博</a>
-            </li>
-            <li>
-              <a href="/oauth?blogtype=github">Github</a>
-            </li>
-          </ul>
-          
-          
-        <% }%>
-        </div>
+<% include header %>
+<div class="container">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span9 page" id="<%=page.id %>">
+        <article class="news" id="<%=news.id %>">
+          <header>
+            <h1><%=news.title %></h1>
+            <span><%= resources.translate("Date")%>: <%=news.date.toLocaleDateString() %></span>
+          </header>
+          <hr />
+          <div class="content">
+            <%-news.content %>
+          </div>
+        </article>
+      </div>
+      <div class="span3">
+        <% include sidebar %>
       </div>
     </div>
   </div>
-  <div class="container">
-    <section class="news_wrapper">
-      <article class="news" id="<%=news.id %>">
-        <header>
-          <h1><%=news.title %></h1>
-          <span><%= resources.translate("Date")%>: <%=news.date.toLocaleDateString() %></span>
-        </header>
-        <hr />
-        <div class="content">
-          <%-news.content %>
-        </div>
-      </article>
-    </section>
-    <hr />
-    <footer>
-      &copy;hu.js 2012
-    </footer>
-  </div>
-  <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-<script type='text/javascript'>
-(function() {
-    var c = document.createElement('script'); 
-    c.type = 'text/javascript';
-    c.async = true;
-    c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/46449';
-    var h = document.getElementsByTagName('script')[0];
-    h.parentNode.insertBefore(c, h);
-})();
-</script>
-</body>
-</html>
+</div>
+<% include footer %>

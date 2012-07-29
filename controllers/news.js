@@ -9,6 +9,7 @@ exports.overview = function(req, res, next) {
       return next(err);
     }
     res.render('news', {
+      viewname: "news",
       resources: req.getResources('index'),
       news: row,
       user: user || {},
@@ -28,6 +29,7 @@ exports.single = function(req, res, next) {
       return next(err);
     }
     res.render('singlenews', {
+      viewname: "news",
       resources: req.getResources('index'),
       news: currentNews,
       user: user || {},

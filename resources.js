@@ -132,7 +132,7 @@ exports.index = {
   },
   "News": {
     "en-us": "News",
-    "zh-cn": "新闻"
+    "zh-cn": "会议动态"
   },
   "Title": {
     "en-us": "Title",
