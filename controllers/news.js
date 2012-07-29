@@ -13,8 +13,7 @@ exports.overview = function(req, res, next) {
       resources: req.getResources('index'),
       news: row,
       user: user || {},
-      csrf: req.session._csrf,
-      layout: false
+      csrf: req.session._csrf
     });
   });
 };
@@ -33,8 +32,7 @@ exports.single = function(req, res, next) {
       resources: req.getResources('index'),
       news: currentNews,
       user: user || {},
-      csrf: req.session._csrf,
-      layout: false
+      csrf: req.session._csrf
     });
   });
 };
