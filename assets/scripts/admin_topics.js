@@ -58,6 +58,7 @@ $(function () {
         hiddenID.val(topic._id);
         topicNode.val(topic.name);
         speaker.val(topic.speaker);
+        languageNode.val(topic.language);
         topicInfoNode.val(topic.topicInfo);
         speakerInfoNode.val(topic.speakerInfo);
         githubNode.val(topic.github);
