@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= resources.translate("Hu.js coming soon!")%></title>
+  <title><%= locals.page ? page.title + " - " : "" %><%= resources.translate("Hu.js coming soon!")%></title>  <title><%= resources.translate("Hu.js coming soon!")%></title>
   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script>
     var csrf = '<%=csrf%>';
@@ -29,12 +29,12 @@
             <li class="<%= (viewname === 'survey' ? 'active' : '')%>"><a href="/survey"><%= resources.translate("Survey")%></a></li>
             <!--<li><a href="/news"><%= resources.translate("News")%></a></li>-->
             <li class="<%= (viewname === 'schedule' ? 'active' : '')%>"><a href="/schedule"><%= resources.translate("Schedule")%></a></li>
-            <li class="<%= (viewname === 'venue' ? 'active' : '')%>"><a href="/venue"><%= resources.translate("Venue")%></a></li>
+            <li class="<%= (viewname === 'venue' ? 'active' : '')%>"><a href="/page/venue"><%= resources.translate("Venue")%></a></li>
             <li class="<%= (viewname === 'speakers' ? 'active' : '')%>"><a href="/speakers"><%= resources.translate("Speakers")%></a></li>
             <li class="<%= (viewname === 'sponsors' ? 'active' : '')%>"><a href="/sponsors"><%= resources.translate("Sponsors")%></a></li>
             <li class="<%= (viewname === 'community' ? 'active' : '')%>"><a href="/community"><%= resources.translate("Community")%></a></li>
-            <li class="<%= (viewname === 'about' ? 'active' : '')%>"><a href="/about"><%= resources.translate("About")%></a></li>
-            <li class="<%= (viewname === 'contact' ? 'active' : '')%>"><a href="/contact"><%= resources.translate("Contact")%></a></li>
+            <li class="<%= (viewname === 'about' ? 'active' : '')%>"><a href="/page/about"><%= resources.translate("About")%></a></li>
+            <li class="<%= (viewname === 'contact' ? 'active' : '')%>"><a href="/page/contact"><%= resources.translate("Contact")%></a></li>
           </ul>
         </div><!--/.nav-collapse -->
         <div class="btn-group pull-right">

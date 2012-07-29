@@ -9,12 +9,22 @@ exports.view = function(req, res, next) {
       // TOTO
       return next(err);
     }
-    res.render('page', {
-      resources: req.getResources('index'),
-      page: page,
-      user: user || {},
-      csrf: req.session._csrf,
-      layout: false
-    });
+    if (page) {
+      res.render('page', {
+        viewname: sign,
+        resources: req.getResources('index'),
+        page: page,
+        user: user || {},
+        csrf: req.session._csrf,
+        layout: false
+      });
+    } else {
+      res.render('comingsoon', {
+        viewname: sign,
+        resources: req.getResources('index'),
+        user: user || {},
+        csrf: req.session._csrf
+      });
+    }
   });
 };

@@ -1,5 +1,5 @@
 exports.comingsoon = function (req, res, next) {
-	var user = req.session.oauthUser;
+  var user = req.session.oauthUser;
   res.render('comingsoon', {
     viewname: '',
     resources: req.getResources('index'),

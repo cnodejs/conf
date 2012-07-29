@@ -12,6 +12,7 @@ body {
 }
 .hero-unit {
   text-align: center;
+  padding: 30px;
 }
 div.logo {
   margin: 10px auto;
