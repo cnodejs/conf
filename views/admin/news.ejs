@@ -1,15 +1,15 @@
 <% include header %>
 <div class="container">
   <script src="/assets/scripts/admin_news.js"></script>
-  <h2><%= resources.translate("News")%></h2>
+  <h2><%= resources.header.translate("News")%></h2>
   <table id="formal-session" class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th><%= resources.translate("News")%></th>
-        <th><%= resources.translate("Date")%></th>
-        <th><%= resources.translate("Edit")%></th>
-        <th><%= resources.translate("Remove")%></th>
-        <th><%= resources.translate("View")%></th>
+        <th><%= resources.header.translate("News")%></th>
+        <th><%= resources.view.translate("Date")%></th>
+        <th><%= resources.view.translate("Edit")%></th>
+        <th><%= resources.view.translate("Remove")%></th>
+        <th><%= resources.view.translate("View")%></th>
       </tr>
     </thead>
     <tbody>
@@ -17,21 +17,21 @@
       <tr data-id="<%=currentNews._id%>">
         <td><%=currentNews.title%></td>
         <td><%=currentNews.date.toLocaleDateString()%></td>
-        <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.translate("Edit")%></td>
-        <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.translate("Remove")%></td>
-        <td><a href="/news/<%=currentNews._id%>" class="btn"><%= resources.translate("View")%></a></td>
+        <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.view.translate("Edit")%></td>
+        <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.view.translate("Remove")%></td>
+        <td><a href="/news/<%=currentNews._id%>" class="btn"><%= resources.view.translate("View")%></a></td>
       </tr>
       <% }); %>
     </tbody>
   </table>
-  <h3><%= resources.translate("More news") %></h3>
-  <p><%= resources.translate("Not enough") %></p>
+  <h3><%= resources.view.translate("More news") %></h3>
+  <p><%= resources.view.translate("Not enough") %></p>
   <div class="well">
     <fieldset id="news" class="control-group">
       <input type="hidden" id="id" />
-      <label for="title"><%= resources.translate("Title")%>：</label>
-      <input type="text" id="title" placeholder="<%= resources.translate("eg. title") %>" style="width:99%;" />
-      <label for="content"><%= resources.translate("Content")%>：</label>
+      <label for="title"><%= resources.view.translate("Title")%>：</label>
+      <input type="text" id="title" placeholder="<%= resources.view.translate("eg. title") %>" style="width:99%;" />
+      <label for="content"><%= resources.view.translate("Content")%>：</label>
       <textarea id="content" style="width:99%;min-height:300px;"></textarea>
       <br />
       <button class='btn btn-primary' id='submit'>提交</button>

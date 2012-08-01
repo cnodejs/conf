@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= resources.translate("Hu.js coming soon!")%></title>
+  <title><%= resources.header.translate("title")%></title>
   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script>
     var csrf = '<%=csrf%>';
@@ -23,7 +23,7 @@
         </a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="<%= (viewname === 'home' ? 'active' : '')%>"><a href="/admin/"><%= resources.translate("Homepage")%></a></li>
+            <li class="<%= (viewname === 'index' ? 'active' : '')%>"><a href="/admin/"><%= resources.header.translate("Homepage")%></a></li>
             <li class="divider-vertical"></li>
             <li class="<%= (viewname === 'topics' ? 'active' : '')%>"><a href="/admin/topics">调查问卷</a></li>
             <li class="<%= (viewname === 'pages' ? 'active' : '')%>"><a href="/admin/pages">页面设置</a></li>

@@ -1,17 +1,17 @@
 <% include header %>
 <script src="/assets/scripts/admin_pages.js"></script>
 <div class="container">
-  <h2><%= resources.translate("Page")%></h2>
+  <h2><%= resources.view.translate("Page")%></h2>
   <hr />
   <h3>Chinese:</h3>
   <table id="formal-session" class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th><%= resources.translate("Title")%></th>
-        <th><%= resources.translate("Sign")%></th>
-        <th><%= resources.translate("Edit")%></th>
-        <th><%= resources.translate("Remove")%></th>
-        <th><%= resources.translate("View")%></th>
+        <th><%= resources.view.translate("Title")%></th>
+        <th><%= resources.view.translate("Sign")%></th>
+        <th><%= resources.view.translate("Edit")%></th>
+        <th><%= resources.view.translate("Remove")%></th>
+        <th><%= resources.view.translate("View")%></th>
       </tr>
     </thead>
     <tbody>
@@ -19,9 +19,9 @@
       <tr data-id="<%=page._id%>">
         <td><%=page.title%></td>
         <td><%=page.sign%></td>
-        <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.translate("Edit")%></td>
-        <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.translate("Remove")%></td>
-        <td><a href="/page/<%=page.sign%>" class="btn"><%= resources.translate("View")%></a></td>
+        <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.view.translate("Edit")%></td>
+        <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.view.translate("Remove")%></td>
+        <td><a href="/page/<%=page.sign%>" class="btn"><%= resources.view.translate("View")%></a></td>
       </tr>
       <% }); %>
     </tbody>
@@ -30,11 +30,11 @@
   <table id="formal-session" class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th><%= resources.translate("Title")%></th>
-        <th><%= resources.translate("Sign")%></th>
-        <th><%= resources.translate("Edit")%></th>
-        <th><%= resources.translate("Remove")%></th>
-        <th><%= resources.translate("View")%></th>
+        <th><%= resources.view.translate("Title")%></th>
+        <th><%= resources.view.translate("Sign")%></th>
+        <th><%= resources.view.translate("Edit")%></th>
+        <th><%= resources.view.translate("Remove")%></th>
+        <th><%= resources.view.translate("View")%></th>
       </tr>
     </thead>
     <tbody>
@@ -42,22 +42,22 @@
       <tr data-id="<%=page._id%>">
         <td><%=page.title%></td>
         <td><%=page.sign%></td>
-        <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.translate("Edit")%></td>
-        <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.translate("Remove")%></td>
-        <td><a href="/page/<%=page.sign%>" class="btn"><%= resources.translate("View")%></a></td>
+        <td><a href="javascript:;" class="edit btn btn-primary"><%= resources.view.translate("Edit")%></td>
+        <td><a href="javascript:;" class="remove btn btn-danger"><%= resources.view.translate("Remove")%></td>
+        <td><a href="/page/<%=page.sign%>" class="btn"><%= resources.view.translate("View")%></a></td>
       </tr>
       <% }); %>
     </tbody>
   </table>
-  <p><%= resources.translate("Not enough") %></p>
+  <p><%= resources.view.translate("Not enough") %></p>
   <div class="well">
     <fieldset id="news" class="control-group">
       <input type="hidden" id="id" />
-      <label for="title"><%= resources.translate("Title")%>：</label>
-      <input type="text" id="title" placeholder="<%= resources.translate("eg. title") %>" style="width:99%;" />
-      <label for="sign"><%= resources.translate("Sign")%>：</label>
-      <input type="text" id="sign" placeholder="<%= resources.translate("eg. sign") %>" />
-      <label for="content"><%= resources.translate("Content")%>：</label>
+      <label for="title"><%= resources.view.translate("Title")%>：</label>
+      <input type="text" id="title" placeholder="<%= resources.view.translate("eg. title") %>" style="width:99%;" />
+      <label for="sign"><%= resources.view.translate("Sign")%>：</label>
+      <input type="text" id="sign" placeholder="<%= resources.view.translate("eg. sign") %>" />
+      <label for="content"><%= resources.view.translate("Content")%>：</label>
       <textarea id="content" style="width:99%;min-height:300px;"></textarea>
       <button class='btn btn-primary' id='submit'>提交</button>
       <span class="help-inline" id='status'>&nbsp;</span>
