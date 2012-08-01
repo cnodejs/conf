@@ -38,8 +38,22 @@ app.use(function (req, res, next) {
     req.locales[0] = 'en-us';
   }
   req.getResources = function (viewname) {
-    var localize = new Localize(require('./resources')[viewname]);
-    localize.setLocale(this.locales[0]);
+    var resources = require('./resources');
+    
+    var localize = {
+      "general": new Localize(resources["general"]),
+      "header": new Localize(resources["header"]),
+      "sidebar": new Localize(resources["sidebar"]),
+      "footer": new Localize(resources["footer"]),      
+      "view": new Localize(resources[viewname])
+    };
+    
+    localize.general.setLocale(this.locales[0]);
+    localize.header.setLocale(this.locales[0]);
+    localize.sidebar.setLocale(this.locales[0]);
+    localize.footer.setLocale(this.locales[0]);
+    localize.view.setLocale(this.locales[0]);
+
     return localize;
   };
   next();

@@ -3,18 +3,18 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span9 page">
-        <h1><%= resources.translate("News")%>:</h1>
+        <h1><%= resources.header.translate("News")%>:</h1>
         <hr />
         <% for (var i = 0; i < news.length; i++) { %>
         <article class="news" id="<%=news[i]._id %>">
           <header>
             <h2><a href="/news/<%=news[i]._id %>"><%=news[i].title %></a></h2>
-            <span><%= resources.translate("Date")%>: <%=news[i].date.toLocaleDateString() %></span>
+            <span><%= resources.view.translate("Date")%>: <%=news[i].date.toLocaleDateString() %></span>
           </header>
           <div class="content">
             <%-news[i].content.substr(0, 100) %>...
           </div>
-          <a href="/news/<%=news[i]._id %>" class="readmore btn"><%= resources.translate("Read more")%></a>
+          <a href="/news/<%=news[i]._id %>" class="readmore btn"><%= resources.view.translate("Read more")%></a>
         </article>
         <hr />
         <% }; %>

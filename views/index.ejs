@@ -5,11 +5,11 @@
       <div class="span9">
         <div class="hero-unit">
           <div class="logo">
-            <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
+            <% include logo %>
           </div>
-          <h1><%= resources.translate("date_city")%></h1>
-          <p><%= resources.translate("introduction")%></p>
-          <h2><%- resources.translate("hashtag")%></h2>
+          <h1><%= resources.view.translate("date_city")%></h1>
+          <p><%= resources.view.translate("introduction")%></p>
+          <h2><%- resources.view.translate("hashtag")%></h2>
         </div>
         <h2>会议简介</h2>
         <p>
