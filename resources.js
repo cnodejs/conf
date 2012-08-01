@@ -1,42 +1,23 @@
-exports.home = {
-  "Hujs": {
+exports.header = {
+  "title": {
     "en-us": "HuJS 2012, September 14-16, Shanghai",
     "zh-cn": "沪JS 2012，九月14-16日，上海"
-  },
-  "date_city": {
-    "en-us": "September 14-16, Shanghai",
-    "zh-cn": "九月14－16日，上海"
-  },
-  "introduction": {
-    "en-us": "Conference and hackathon for the Chinese Javascript & Node.js developer community",
-    "zh-cn": "一个为中国Javascript和Node.js研发者社区举办的会议"
-  },
-  "hashtag": {
-    "en-us": 'Twitter： <a href="http://search.twitter.com/search?q=%23hujs">#hujs#</a>',
-    "zh-cn": '微博： <a href="http://s.weibo.com/weibo/%25E6%25B2%25AAJS&Refer=q_weibo">#沪JS#</a>'
-  }
-};
-
-exports.index = {
-  "Hujs": {
-    "en-us": "Hu.js",
-    "zh-cn": "沪js"
-  },
-  "Hu.js coming soon!": {
-    "en-us": "Hu.js is inviting the JavaScritp experts which come from China &amp; International. Welcome to participate in our survey!",
-    "zh-cn": "沪JS正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾"
   },
   "Homepage": {
     "en-us": "Home",
     "zh-cn": "主页"
   },
-  "Schedule": {
-    "en-us": "Schedule",
-    "zh-cn": "日程安排"
+  "News": {
+    "en-us": "News",
+    "zh-cn": "会议动态"
   },
   "Survey": {
     "en-us": "Survey",
     "zh-cn": "调查问卷"
+  },
+  "Schedule": {
+    "en-us": "Schedule",
+    "zh-cn": "日程安排"
   },
   "Venue": {
     "en-us": "Venue",
@@ -61,6 +42,43 @@ exports.index = {
   "Contact": {
     "en-us": "Contact",
     "zh-cn": "联系方式"
+  },
+  "Logout": {
+    "en-us": "Logout",
+    "zh-cn": "退出"
+  },
+  "Sign In": {
+    "en-us": "Sign In",
+    "zh-cn": "登录"
+  },
+  "recommended": {
+    "en-us": "recommended",
+    "zh-cn": "推荐"
+  }
+};
+
+exports.sidebar = {
+  // TODO: i18n sidebar.ejs
+};
+
+exports.footer = {
+  "copyright": {
+    "en-us": "&copy;HuJS 2012",
+    "zh-cn": "&copy;沪JS 2012"
+  }
+};
+
+exports.general = {
+  "Hujs": {
+    "en-us": "HuJS",
+    "zh-cn": "沪JS"
+  }  
+};
+
+exports.index = {
+  "Hu.js coming soon!": {
+    "en-us": "Hu.js is inviting the JavaScript experts which come from China &amp; International. Welcome to participate in our survey!",
+    "zh-cn": "沪JS正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾"
   },
   "date_city": {
     "en-us": "September 14-16, Shanghai",
@@ -129,10 +147,6 @@ exports.index = {
   "Sign": {
     "en-us": "Sign",
     "zh-cn": "标志"
-  },
-  "News": {
-    "en-us": "News",
-    "zh-cn": "会议动态"
   },
   "Title": {
     "en-us": "Title",

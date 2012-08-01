@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= locals.page ? page.title + " - " : "" %><%= resources.translate("Hu.js coming soon!")%></title>
+  <title><%= locals.page ? page.title + " - " : "" %><%= resources.header.translate("title")%></title>
   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script>
     var csrf = '<%=csrf%>';
@@ -20,19 +20,19 @@
           <span class="icon-bar"></span>
         </a>
         <a class="brand" href="/">
-          <span class="logo_hanzi">沪</span>JS<span class="logo_dot"> • </span>2012
+          <% include logo %>
         </a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="<%= (viewname === 'news' ? 'active' : '')%>"><a href="/news"><%= resources.translate("News")%></a></li>
-            <li class="<%= (viewname === 'survey' ? 'active' : '')%>"><a href="/survey"><%= resources.translate("Survey")%></a></li>
-            <li class="<%= (viewname === 'schedule' ? 'active' : '')%>"><a href="/schedule"><%= resources.translate("Schedule")%></a></li>
-            <li class="<%= (viewname === 'venue' ? 'active' : '')%>"><a href="/page/venue"><%= resources.translate("Venue")%></a></li>
-            <li class="<%= (viewname === 'speakers' ? 'active' : '')%>"><a href="/speakers"><%= resources.translate("Speakers")%></a></li>
-            <li class="<%= (viewname === 'sponsors' ? 'active' : '')%>"><a href="/sponsors"><%= resources.translate("Sponsors")%></a></li>
-            <li class="<%= (viewname === 'community' ? 'active' : '')%>"><a href="/community"><%= resources.translate("Community")%></a></li>
-            <li class="<%= (viewname === 'about' ? 'active' : '')%>"><a href="/page/about"><%= resources.translate("About")%></a></li>
-            <li class="<%= (viewname === 'contact' ? 'active' : '')%>"><a href="/page/contact"><%= resources.translate("Contact")%></a></li>
+            <li class="<%= (viewname === 'news' ? 'active' : '')%>"><a href="/news"><%= resources.header.translate("News")%></a></li>
+            <li class="<%= (viewname === 'survey' ? 'active' : '')%>"><a href="/survey"><%= resources.header.translate("Survey")%></a></li>
+            <li class="<%= (viewname === 'schedule' ? 'active' : '')%>"><a href="/schedule"><%= resources.header.translate("Schedule")%></a></li>
+            <li class="<%= (viewname === 'venue' ? 'active' : '')%>"><a href="/page/venue"><%= resources.header.translate("Venue")%></a></li>
+            <li class="<%= (viewname === 'speakers' ? 'active' : '')%>"><a href="/speakers"><%= resources.header.translate("Speakers")%></a></li>
+            <li class="<%= (viewname === 'sponsors' ? 'active' : '')%>"><a href="/sponsors"><%= resources.header.translate("Sponsors")%></a></li>
+            <li class="<%= (viewname === 'community' ? 'active' : '')%>"><a href="/community"><%= resources.header.translate("Community")%></a></li>
+            <li class="<%= (viewname === 'about' ? 'active' : '')%>"><a href="/page/about"><%= resources.header.translate("About")%></a></li>
+            <li class="<%= (viewname === 'contact' ? 'active' : '')%>"><a href="/page/contact"><%= resources.header.translate("Contact")%></a></li>
             <li class="divider-vertical"></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -45,18 +45,18 @@
           <ul class="dropdown-menu">
             <!--<li><a href="#">Profile</a></li>
             <li class="divider"></li>-->
-            <li><a href="/ouath/logout">退出</a></li>
+            <li><a href="/ouath/logout"><%= resources.header.translate("Logout") %></a></li>
           </ul>
         <% } else { %>
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-user"></i> 登录
+            <i class="icon-user"></i> <%= resources.header.translate("Sign In") %>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             <!--<li><a href="#">Profile</a></li>
             <li class="divider"></li>-->
             <li>
-              <a href="/oauth?blogtype=github">Github(推荐)</a>
+              <a href="/oauth?blogtype=github">Github (<%= resources.header.translate("recommended") %>)</a>
             </li>
             <li>
               <a href="/oauth?blogtype=weibo">新浪微博</a>

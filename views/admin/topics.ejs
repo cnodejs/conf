@@ -1,14 +1,14 @@
 <% include header %>
 <script src="/assets/scripts/admin_topics.js"></script>
 <div class="container">
-  <h2><%= resources.translate("The survey")%></h2>
+  <h2><%= resources.view.translate("The survey")%></h2>
   <h3>外籍嘉宾</h3>
   <table id="foreign-session" class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th><%= resources.translate("Topic")%></th>
+        <th><%= resources.view.translate("Topic")%></th>
         <th>话题简介</th>
-        <th><%= resources.translate("Speakers")%></th>
+        <th><%= resources.header.translate("Speakers")%></th>
         <th>嘉宾简介</th>
         <th>Github</th>
         <th>人气值</th>
@@ -35,9 +35,9 @@
   <table id="local-session" class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th><%= resources.translate("Topic")%></th>
+        <th><%= resources.view.translate("Topic")%></th>
         <th>话题简介</th>
-        <th><%= resources.translate("Speakers")%></th>
+        <th><%= resources.header.translate("Speakers")%></th>
         <th>嘉宾简介</th>
         <th>Github</th>
         <th>人气值</th>
@@ -60,12 +60,12 @@
       <% }); %>
     </tbody>
   </table>
-  <h3><%= resources.translate("Topics(inviting)")%></h3>
+  <h3><%= resources.view.translate("Topics(inviting)")%></h3>
   <table id="pre-session" class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th><%= resources.translate("Topic")%></th>
-        <th><%= resources.translate("Speakers")%></th>
+        <th><%= resources.view.translate("Topic")%></th>
+        <th><%= resources.header.translate("Speakers")%></th>
         <th>人气值</th>
         <th>操作</th>
         <th>查看</th>
@@ -88,9 +88,9 @@
     <fieldset id="topic" class="control-group">
       <input type="hidden" id="id" />
       <div class="control-group">
-        <label class="control-label" for="name"><%= resources.translate("Topic")%>：</label>
+        <label class="control-label" for="name"><%= resources.view.translate("Topic")%>：</label>
         <div class="controls">
-          <input type="text" class="input-xlarge" id="name" placeholder="<%= resources.translate("eg. topic") %>" />
+          <input type="text" class="input-xlarge" id="name" placeholder="<%= resources.view.translate("eg. topic") %>" />
         </div>
       </div>
       <div class="control-group">
@@ -111,7 +111,7 @@
       <div class="control-group">
         <label class="control-label" for="speaker">演讲者：</label>
         <div class="controls">
-          <input type="text" class="input-xlarge" id="speaker" placeholder="<%= resources.translate("eg. speaker") %>" />
+          <input type="text" class="input-xlarge" id="speaker" placeholder="<%= resources.view.translate("eg. speaker") %>" />
         </div>
       </div>
       <div class="control-group">
