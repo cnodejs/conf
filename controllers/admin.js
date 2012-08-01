@@ -11,7 +11,7 @@ exports.topics = function (req, res, next) {
       return;
     }
     res.render('admin/topics', {
-      resources: req.getResources('index'),
+      resources: req.getResources('admin'),
       foreign: row.filter(function (topic) {
         return topic.type === "formal" && topic.language === "english";
       }),
@@ -35,7 +35,7 @@ exports.updateTopic = function (req, res, next) {
     update.type = post.type;
   }
   if (post.name) {
-    update.name = post.name;
+    udpdate.name = post.name;
   }
   if (post.topicInfo) {
     update.topicInfo = post.topicInfo;
@@ -84,7 +84,7 @@ exports.news = function (req, res, next) {
     }
     res.render('admin/news', {
       viewname: "news",
-      resources: req.getResources('index'),
+      resources: req.getResources('admin'),
       news: row,
       user: user || {},
       csrf: req.session._csrf,
@@ -166,7 +166,7 @@ exports.pages = function (req, res, next) {
     }
     res.render('admin/pages', {
       viewname: "pages",
-      resources: req.getResources('index'),
+      resources: req.getResources('admin'),
       en: row.filter(function (page) {
         return page.language === "en-us";
       }),

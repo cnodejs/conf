@@ -10,7 +10,7 @@ exports.overview = function(req, res, next) {
     }
     res.render('news', {
       viewname: "news",
-      resources: req.getResources('index'),
+      resources: req.getResources('news'),
       news: row,
       user: user || {},
       csrf: req.session._csrf
@@ -29,7 +29,7 @@ exports.single = function(req, res, next) {
     }
     res.render('singlenews', {
       viewname: "news",
-      resources: req.getResources('index'),
+      resources: req.getResources('news'),
       news: currentNews,
       user: user || {},
       csrf: req.session._csrf

@@ -4,12 +4,12 @@
     <div class="row-fluid">
       <div class="span9">
         <p class="lead"><%= resources.view.translate("Hu.js coming soon!")%></p>
-        <h2><%= resources.view.translate("The survey")%></h2>
-        <h3><%= resources.view.translate("Topics(inviting)")%></h3>
+        <h2><%= resources.general.translate("The survey")%></h2>
+        <h3><%= resources.general.translate("Topics(inviting)")%></h3>
         <table id="pre-session" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th><%= resources.view.translate("Topic")%></th>
+              <th><%= resources.general.translate("Topic")%></th>
               <th><%= resources.header.translate("Speakers")%></th>
               <th><%= resources.view.translate("Interesting") %></th>
             </tr>
@@ -29,10 +29,10 @@
         <div class="well form-inline">
           <fieldset id="topic" class="control-group">
             <input type="hidden" id="id" />
-            <label for="name"><%= resources.view.translate("Topic")%>：</label>
-            <input type="text" id="name" placeholder="<%= resources.view.translate("eg. topic") %>" />
+            <label for="name"><%= resources.general.translate("Topic")%>：</label>
+            <input type="text" id="name" placeholder="<%= resources.general.translate("eg. topic") %>" />
             <label for="speaker"><%= resources.header.translate("Speakers")%>：</label>
-            <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.view.translate("eg. speaker") %>" />
+            <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.general.translate("eg. speaker") %>" />
             <button class='btn btn-primary' id='submit'><%= resources.view.translate("I wanna listen too!")%></button>
             <span class="help-inline" id='status'>&nbsp;</span>
           </fieldset>

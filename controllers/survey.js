@@ -10,7 +10,7 @@ exports.speakers = function (req, res, next) {
     }
     res.render('speakers', {
       viewname: 'speakers',
-      resources: req.getResources('index'),
+      resources: req.getResources('speakers'),
       foreign: row.filter(function (topic) {
         return topic.type === "formal" && topic.language === "english";
       }).sort(function (a, b) {
@@ -37,7 +37,7 @@ exports.inviteTopics = function (req, res, next) {
     }
     res.render('survey', {
       viewname: 'survey',
-      resources: req.getResources('index'),
+      resources: req.getResources('survey'),
       topics: row.sort(function (a, b) {
         return b.vote.length - a.vote.length;
       }),
