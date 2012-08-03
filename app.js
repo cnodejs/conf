@@ -76,11 +76,28 @@ var authRequired = function (req, res, next) {
 
 var adminRequired = function (req, res, next) {
   var user = req.session.oauthUser;
-  if (config.admins.indexOf(user.t_url) !== -1) {
-    next();
-  } else {
-    res.send(401, {'status': 'fail', 'message': 'unauthorized'});
-  }
+
+  var GitHubApi = require("github");
+
+  var github = new GitHubApi({
+      version: "3.0.0"
+  });
+
+  var admins = [];
+
+  github.orgs.getMembers({org: "cnodejs"},
+    function(err, members) {
+      for (i in members) {
+        var member_url = (members[i].url || '').replace('api.github.com/users', 'github.com');
+        admins.push(member_url);
+      }
+      
+      if (admins.concat(config.admins).indexOf(user.t_url) !== -1) {
+        next();
+      } else {
+        res.send(401, {'status': 'fail', 'message': u.t_url + ' is unauthorized'});
+      }
+    });
 };
 
 app.get('/survey', survey.inviteTopics);
