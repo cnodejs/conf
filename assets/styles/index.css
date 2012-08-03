@@ -23,6 +23,12 @@ body {
     opacity: 0.7;
     color: white;
 }
+
+hr {
+  border-top: 1px solid #554;
+  border-bottom: 1px solid #332;
+}
+
 div.logo {
   margin: 10px auto;
   border: 5px solid white;
@@ -51,6 +57,7 @@ span.logo_dot {
 span.logo_hanzi {
   font-family: "Hei", "SimHei", "Microsoft YaHei";
 }
+
 .navbar .btn-group .btn.github {
   margin-left: 3px;
   border-radius: 2px;
