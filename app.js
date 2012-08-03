@@ -79,14 +79,12 @@ var adminRequired = function (req, res, next) {
 
   var GitHubApi = require("github");
 
-  var github = new GitHubApi({
-      version: "3.0.0"
-  });
-
-  var admins = [];
+  var github = new GitHubApi({ version: "3.0.0" });
 
   github.orgs.getMembers({org: "cnodejs"},
     function(err, members) {
+      var admins = [];
+
       for (i in members) {
         var member_url = (members[i].url || '').replace('api.github.com/users', 'github.com');
         admins.push(member_url);
@@ -101,12 +99,14 @@ var adminRequired = function (req, res, next) {
 };
 
 app.get('/survey', survey.inviteTopics);
+/*
 app.get('/schedule', todo.comingsoon);
 app.get('/venue', todo.comingsoon);
 app.get('/sponsors', todo.comingsoon);
 app.get('/community', todo.comingsoon);
 app.get('/about', todo.comingsoon);
 app.get('/contact', todo.comingsoon);
+*/
 
 // topics
 app.get('/speakers', survey.speakers);
@@ -132,9 +132,11 @@ app.post('/admin/add_page', authRequired, adminRequired, admin.addPage);
 app.get('/admin/view_page', authRequired, adminRequired, admin.viewPage);
 app.post('/admin/edit_page', authRequired, adminRequired, admin.editPage);
 app.del('/admin/page', authRequired, adminRequired, admin.removePage);
+
 app.get('/admin', function (req, res, next) {
   res.redirect("/admin/topics");
 });
+
 app.get('/admin/', function (req, res, next) {
   res.redirect("/admin/topics");
 });
