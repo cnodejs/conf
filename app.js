@@ -41,6 +41,7 @@ app.use(function (req, res, next) {
     var resources = require('./resources');
     
     var localize = {
+      "lang": this.locales[0],
       "general": new Localize(resources["general"]),
       "header": new Localize(resources["header"]),
       "sidebar": new Localize(resources["sidebar"]),
