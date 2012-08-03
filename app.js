@@ -132,6 +132,9 @@ app.post('/admin/add_page', authRequired, adminRequired, admin.addPage);
 app.get('/admin/view_page', authRequired, adminRequired, admin.viewPage);
 app.post('/admin/edit_page', authRequired, adminRequired, admin.editPage);
 app.del('/admin/page', authRequired, adminRequired, admin.removePage);
+app.get('/admin', function (req, res, next) {
+  res.redirect("/admin/topics");
+});
 app.get('/admin/', function (req, res, next) {
   res.redirect("/admin/topics");
 });
