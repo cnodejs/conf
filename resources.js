@@ -117,9 +117,26 @@ exports.index = {
     "zh-cn": "一个为中国Javascript和Node.js研发者社区举办的会议"
   },
   "hashtag": {
-    "en-us": 'Twitter： <a href="http://search.twitter.com/search?q=%23hujs">#hujs#</a>',
+    "en-us": 'Twitter： <a href="http://search.twitter.com/search?q=%23hujs">#hujs</a>',
     "zh-cn": '微博： <a href="http://s.weibo.com/weibo/%25E6%25B2%25AAJS&Refer=q_weibo">#沪JS#</a>'
-  }
+  },
+  "About": {
+    "en-us": "About",
+    "zh-cn": "会议简介"
+  },
+  "Objectives": {
+    "en-us": "Objectives",
+    "zh-cn": "会议目标"
+  },
+  "About-text": {
+    "en-us": "沪JS 2012 is a three day conference and hackathon focused on Javascript and Node.js technologies. This developer focused event will bring together notable figures from the Chinese and international Javascript communities to share their knowledge and passion for Javascript. The conference will be held in Shanghai from September 14-16.",
+    "zh-cn": "沪JS 2012 是一次以JavaScript和Node.js技术为主题为期三天的会议(两天)和编程马拉松（一天）。这次关注于软件研发者的盛会将偕同中国国内与国际上JavaScript社区业界的知名人士，共同分享他们的专业知识与对JavaScript 的热情。此会将于九月14－16日在上海举行。"
+  },
+  "Objectives-text": {
+    "en-us": "The conference has three main goals. The first goal is to bring well known figures from the international Javascript community to China to present on deep technical topics related to Node.js and client-side Javascript. The second goal is to connect Chinese Javascript developers with that international community and break through the barriers of language to share technical knowledge and personal passions. Finally, the third goal is to provide a time and space for over 200 Javascript developers to hack on open source projects with their international peers, focusing on translating documentation, improving support for internationalization, and sharing ideas for the future of those projects.",
+    "zh-cn": "此次会议有三个主要目标。首要目标是引进国际上JavaScript社区内业界知名人士去中国介绍与Node.js和客户端的JavaScript相关的深层次技术话题。第二目标是促进中国的Javascript研发者与国际社区接轨，打破语言界限共同分享专业知识和个人激情。最后，第三个目标是为超过200名JavaScript研发者提供时间与空间，与他们的国际同行共同编写开放源代码程序，其关注于翻译文档，改善对软件国际化的支持并且分享这些项目发展前景的构想。"
+  },
+
 };
 
 exports.admin = { 
