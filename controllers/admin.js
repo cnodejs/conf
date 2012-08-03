@@ -35,7 +35,7 @@ exports.updateTopic = function (req, res, next) {
     update.type = post.type;
   }
   if (post.name) {
-    udpdate.name = post.name;
+    update.name = post.name;
   }
   if (post.topicInfo) {
     update.topicInfo = post.topicInfo;
