@@ -71,7 +71,6 @@ exports.addTopic = function (req, res) {
   var post = req.body;
   var doc = {
     name: post.name,
-    speaker: post.speaker,
     vote: [user.name],
     type: "wish"
   };

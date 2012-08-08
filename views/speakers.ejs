@@ -3,26 +3,26 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span9">
-        <h2>演讲嘉宾<small>外籍嘉宾</small></h2>
+        <h2><%= resources.header.translate("Speakers") %> <small><%= resources.general.translate("Foreign") %></small></h2>
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th><%= resources.general.translate("Topic")%></th>
-              <th><%= resources.header.translate("Speakers")%></th>
+              <th><%= resources.general.translate("Topic") %></th>
+              <th><%= resources.general.translate("Name") %></th>
               <th>Github</th>
             </tr>
           </thead>
           <tbody>
             <% foreign.forEach(function (topic) { %>
-            <tr data-id="<%=topic._id%>">
-              <td><%=topic.name%></td>
-              <td><%=topic.speaker%></td>
-              <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : '暂无'%></td>
+            <tr data-id="<%= topic._id %>">
+              <td><%= topic.name %></td>
+              <td><%= topic.speaker %></td>
+              <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : resources.general.translate('None')%></td>
             </tr>
             <% }); %>
           </tbody>
         </table>
-        <h2>演讲嘉宾<small>国内嘉宾</small></h2>
+        <h2><%= resources.header.translate("Speakers") %> <small><%= resources.general.translate("Domestic") %></small></h2>
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
@@ -33,10 +33,10 @@
           </thead>
           <tbody>
             <% local.forEach(function (topic) { %>
-            <tr data-id="<%=topic._id%>">
-              <td><%=topic.name%></td>
-              <td><%=topic.speaker%></td>
-              <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : '暂无'%></td>
+            <tr data-id="<%= topic._id %>">
+              <td><%= topic.name %></td>
+              <td><%= topic.speaker %></td>
+              <td><%- topic.github ? '<a href="https://github.com/' + topic.github + '">@' + topic.github + '</a>' : resources.general.translate('None')%></td>
             </tr>
             <% }); %>
           </tbody>

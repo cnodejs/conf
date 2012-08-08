@@ -58,7 +58,18 @@ exports.header = {
 };
 
 exports.sidebar = {
-  // TODO: i18n sidebar.ejs
+  "Vote": {
+    "en-us": "Vote",
+    "zh-cn": "参与投票"
+  },
+  "vote_blurb": {
+    "en-us": "Vote for your favorite topics and we will schedule a session at 沪JS 2012!",
+    "zh-cn": "沪JS2012正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾"
+  },
+  "speakers_blurb": {
+    "en-us": "We've lined up some great speakers already! Check out the list!",
+    "zh-cn": "目前我们已经确定了部分国内外的JavaScript大牛，他们为我们带来一批相当有含金量的话题"
+  },
 };
 
 exports.footer = {
@@ -84,7 +95,7 @@ exports.general = {
   },
   // also in admin/topics
   "Topics(inviting)": {
-    "en-us": 'Topics (inviting)',
+    "en-us": 'Topics (wishlist)',
     "zh-cn": '预选话题（拟邀请或邀请中的话题）'
   },
   // also in admin/topics
@@ -98,12 +109,28 @@ exports.general = {
     "zh-cn": "比如：老赵"
   },
   "Not enough": {
-    "en-us": "If above topics aren't make you satisfaction, could you submit your purpose topic or speaker, we will try ours best to invite the topic&amp;speaker for you",
+    "en-us": "Don't see the topic you want? Add a new one! We will try our best to add a session for that topic!",
     "zh-cn": "上面的话题都不感兴趣，还不够给力？遗漏了您喜欢的大牛没有邀请？您还有更好的推荐或是自荐，无论国内还是国外的嘉宾？速填表单，组委会会为您尽力邀请。"
   },
   "Date": {
     "en-us": "Date",
     "zh-cn": "日期"
+  },
+  "Name": {
+    "en-us": "Name",
+    "zh-cn": "名称"
+  },
+  "Domestic": {
+    "en-us": "Domestic",
+    "zh-cn": "国内"
+  },
+  "Foreign": {
+    "en-us": "Foreign",
+    "zh-cn": "外籍"
+  },
+  "None": {
+    "en-us": "None",
+    "zh-cn": "暂无"
   }
 };
 
@@ -187,7 +214,7 @@ exports.admin = {
   },
   // admin/news admin/pages
   "eg. title": {
-    "en-us": "eg. Hu.js Conference will start on 14 Sept.",
+    "en-us": "eg. Hu.js Conference will start on September 14th.",
     "zh-cn": "比如：沪JS大会将会在九月14日隆重举行。"
   }
 };
@@ -205,8 +232,8 @@ exports.speakers = {
 
 exports.survey = {
   "Hu.js coming soon!": {
-    "en-us": "Hu.js is inviting the JavaScript experts which come from China &amp; International. Welcome to participate in our survey!",
-    "zh-cn": "沪JS正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾"
+    "en-us": "沪JS 2012 is inviting both domestic and foreign JavaScript experts from the international community. Thanks for participating in the survey!",
+    "zh-cn": "沪JS2012正在邀请国内外的JavaScript大牛，诚邀您参与调查问卷，我们将为您邀请心仪的话题和嘉宾"
   },
   "Interesting": {
     "en-us": "Interesting +1",

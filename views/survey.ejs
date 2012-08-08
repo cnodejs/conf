@@ -10,7 +10,6 @@
           <thead>
             <tr>
               <th><%= resources.general.translate("Topic")%></th>
-              <th><%= resources.header.translate("Speakers")%></th>
               <th><%= resources.view.translate("Interesting") %></th>
             </tr>
           </thead>
@@ -18,7 +17,6 @@
             <% topics.forEach(function (topic) { %>
             <tr data-id="<%=topic._id%>">
               <td><%=topic.name%></td>
-              <td><%=topic.speaker%></td>
               <td><a href="javascript:;" class="btn btn-primary"><%= topic.vote.length %> | <%=resources.view.translate("I wanna listen it")%></a></td>
             </tr>
             <% }); %>
@@ -31,8 +29,6 @@
             <input type="hidden" id="id" />
             <label for="name"><%= resources.general.translate("Topic")%>：</label>
             <input type="text" id="name" placeholder="<%= resources.general.translate("eg. topic") %>" />
-            <label for="speaker"><%= resources.header.translate("Speakers")%>：</label>
-            <input type="text" class="input-medium" id="speaker" placeholder="<%= resources.general.translate("eg. speaker") %>" />
             <button class='btn btn-primary' id='submit'><%= resources.view.translate("I wanna listen too!")%></button>
             <span class="help-inline" id='status'>&nbsp;</span>
           </fieldset>
