@@ -110,10 +110,7 @@ app.get('/contact', todo.comingsoon);
 
 // topics
 
-//fix for bug in the sponsorship PDF link
-app.get("/)", function (req, res) { res.redirect("/"); });
-
-//add to fix the bug in the PDF linkƒ
+//add to fix the bug in the PDF link
 app.get("/)", function (req, res) { res.redirect("/"); });
 app.get('/speakers', survey.speakers);
 app.post('/add_topic', authRequired, survey.addTopic);
