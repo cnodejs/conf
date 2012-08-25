@@ -15,6 +15,11 @@ var admin = require('./controllers/admin');
 var todo = require('./controllers/todo');
 
 var app = express.createServer();
+app.use(function (req, res, next) {
+  res.setHeader('Location', 'http://www.hujs.org/');
+  res.writeHead(301);
+  res.end();
+});
 app.use(express.cookieParser('hujs_conf_keyboard_cat'));
 app.use(express.session({cookie: {maxAge: 60 * 60000}}));
 app.use(express.json());
