@@ -4,7 +4,9 @@
   "description": "HuJS Conference Website",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "main": "./app.js",
   "repository": {
@@ -24,7 +26,8 @@
     "ejs": "0.8.0",
     "connect-i18n": "0.2.0",
     "weibo": "0.5.0",
-    "github": "0.1.4"
+    "github": "0.1.4",
+    "snyk": "^1.231.0"
   },
   "author": "JacksonTian",
   "contributors": [
@@ -32,5 +35,6 @@
     "Troy Howard <thoward37@gmail.com> (http://github.com/thoward)"
   ],
   "license": "MIT",
-  "customHost": "conf.cnodejs.org"
+  "customHost": "conf.cnodejs.org",
+  "snyk": true
 }
