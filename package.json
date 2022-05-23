@@ -18,7 +18,7 @@
     "CNode"
   ],
   "dependencies": {
-    "connect": "2.3.8",
+    "connect": "2.9.0",
     "express": "3.0.0beta6",
     "localize": "0.4.4",
     "ejs": "0.8.0",
